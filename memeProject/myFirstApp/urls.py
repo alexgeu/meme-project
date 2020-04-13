@@ -15,21 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from register.views import register
 from myViewSample.views import home_view
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search
-from django.urls import include
+from myFirstApp.views import productList, productCreateView, productDetail
 
-urlpatterns = {
-    path('admin/', admin.site.urls),
-    path('Welcome/', home_view),
-    path('WelcomeClass/', HomeViewClass.as_view()),
-    path('create/', productCreateView, name=''),
-    path('products/<int:my_id>', productDetail, name='product-detail'),
-    path('profile/', signup),
-    path('products/', include('myFirstApp.urls')),
-    path('search/', search),
-    path('register/', register, name="register")
-}
+urlpatterns = [
+    path('', productList),
+    path('<int:my_id>', productDetail, name='product-detail'),
+]
