@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block mainContent %}
+
+<h1>Hello World using a template</h1>
+
+{{ name }}
+<br>
+{{ lastname }}
+<br>
+{{ year }}
+<br>
+{% for item in myList%}
+{{ item }} <br>
+{% endfor%}
+
+<!--{% load static %}
+<img src="{% static  "/sanders.jpeg" %}" alt="My image" width=400px/>
+-->
+
+{% endblock %}
