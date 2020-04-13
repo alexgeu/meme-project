@@ -22,7 +22,7 @@ from django.views.generic import TemplateView
 from myFirstApp.views import productList, productCreateView, productDetail, signup, search
 from django.urls import include
 
-urlpatterns = {
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('Welcome/', home_view),
     path('WelcomeClass/', HomeViewClass.as_view()),
@@ -31,5 +31,5 @@ urlpatterns = {
     path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
-    path('register/', register, name="register")
-}
+    path('register/', register, name="register"),
+]
