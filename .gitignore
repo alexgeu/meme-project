@@ -130,3 +130,6 @@ dmypy.json
 
 # IDEA PyCharm Settings
 */.idea/workspace.xml
+*/.idea/tasks.xml
+
+
