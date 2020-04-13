@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block mainContent %}
+<h1>{{ title }}</h1>
+    <form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% for obj in allProducts %}
+    <a href={{obj.get_absolute_path_url}}>
+{{obj.title }} </a> - {{ obj.price }} - {{ obj.summary}}<br><br>
+
+{% endfor%}
+
+
+{% endblock %}
