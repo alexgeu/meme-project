@@ -21,6 +21,7 @@ from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
 from myFirstApp.views import productList, productCreateView, productDetail, signup, search
 from django.urls import include
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,4 +33,7 @@ urlpatterns = [
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
     path('register/', register, name="register"),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('login/', auth_views.LogoutView.as_view(), name='logout'),
+    #path('', include('django.contrib.auth.urls')),
 ]
