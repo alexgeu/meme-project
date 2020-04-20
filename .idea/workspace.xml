@@ -4,6 +4,7 @@
     <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeProject/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeProject/templates/uploading.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/uploading.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -17,7 +17,7 @@
 
 <body>
     <form>
-        <p><b>Drag the your super fancy meme into this box:</b></p>
+        <p><b>Drag your super fancy meme into this box:</b></p>
         <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
             <script>
             function allowDrop(ev)
@@ -39,6 +39,12 @@
             </script><br><br><br><br><p></p>
         <label for="imgCaption">Caption:</label><br>
         <input type="text" id="imgCaption" name="imgCaption"><br>
+        <label for="imgCategory">Category:</label><br>
+        <select id="category"
+            <option value="animals">Animals</option>
+            <option value="cars">Cars</option>
+            <option value="corona">Corona</option>
+            </select><br>
         <p></p><input type="submit" value="Submit">
     </form>
 </body>
