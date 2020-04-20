@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/uploading.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/uploading.html" afterDir="false" />
-    </list>
+    <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,12 +17,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1648" />
-    <option name="y" value="68" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
   </component>
   <component name="ProjectId" id="1aUedMJhyzKZyIzyRWs53DjuAwB" />
   <component name="ProjectViewState">
