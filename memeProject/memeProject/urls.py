@@ -18,7 +18,7 @@ from django.urls import path
 from myViewSample.views import home_view
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search
+from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload
 from django.urls import include
 
 urlpatterns = {
@@ -30,4 +30,5 @@ urlpatterns = {
     path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
+    path('upload/', upload ),
 }

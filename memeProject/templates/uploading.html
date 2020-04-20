@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload and Drag& Drop images</title>
+    <style>
+        #box {
+            width: 110px;
+            height: 60px;
+            padding: 10px;
+            text-align: center;
+            margin: 0 auto;
+            border: 1px solid #aaaaaa;
+        }
+
+        body {
+            text-align: center;
+        }
+        </style>
+</head>
+
+<body>
+    <form>
+        <p><b>Drag the your super fancy meme into this box:</b></p>
+        <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <script>
+            function allowDrop(ev)
+            {
+                ev.preventDefault();
+            }
+
+            function drag(ev)
+            {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            function drop(ev)
+            {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+            </script><br><br><br><br><p></p>
+        <label for="imgCaption">Caption:</label><br>
+        <input type="text" id="imgCaption" name="imgCaption"><br>
+        <p></p><input type="submit" value="Submit">
+    </form>
+</body>
+</html>

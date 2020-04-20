@@ -79,3 +79,7 @@ def signup(httprequest, *args, **kwargs):
 	}
 	return render(httprequest, 'profile.html', context)
 
+def upload(httprequest, *args, **kwargs):
+	return render(httprequest, 'uploading.html')
+
+
