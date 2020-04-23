@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from register.views import register
+# from register.views import register
+from register import views as register_views
 from myViewSample.views import home_view
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
 from myFirstApp.views import productList, productCreateView, productDetail, signup, search
 from django.urls import include
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,11 +32,15 @@ urlpatterns = [
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
-    path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
-    path('register/', register, name="register"),
+    path('register/', register_views.register, name="register"),
     path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('login/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('profile/', register_views.profile, name='profile'),
     #path('', include('django.contrib.auth.urls')),
+
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
