@@ -20,13 +20,12 @@ from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
 from myFirstApp.views import productList, productCreateView, productDetail, signup, search
 from django.urls import include
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = {
     path('admin/', admin.site.urls),
     path('Welcome/', home_view),
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
-    path('products/<int:my_id>', productDetail, name='product-detail'),
     path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),

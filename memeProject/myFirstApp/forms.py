@@ -14,7 +14,7 @@ class RegisterForm(forms.Form):
 class ProductCreateForm(forms.ModelForm):
 	class Meta:
 		model = Products
-		fields = ['title', 'description', 'price']
+		fields = ['title', 'description', 'price',]
 	
 	def clean_title(self, *args, **kwargs):
 		tmp = self.cleaned_data.get('title')
