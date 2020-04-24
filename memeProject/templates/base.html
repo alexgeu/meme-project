@@ -2,12 +2,15 @@
 <html>
 <head>
 <title>Example</title>
+
 </head>
 <body>
+
     {% include 'final_nav_bar.html' %}
     <br>
     {% block mainContent %}
-        will be replaced
+    {% endblock %}
+    {%block content2%}
     {% endblock %}
 
 </body>
