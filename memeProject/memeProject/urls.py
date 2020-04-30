@@ -34,7 +34,6 @@ urlpatterns = [
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
-    path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
     path('register/', register_views.register, name="register"),
