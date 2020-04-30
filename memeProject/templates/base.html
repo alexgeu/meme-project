@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,35 +11,112 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
  -->
-      <title>Hello Meme People</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+      <!-- Main.css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'meme/main.css' %}">
+
+      {% if title %}
+        <title>ThreeSquare Gag - {{ title }}</title>
+      {% else %}
+        <title>ThreeSquareGag Meme Page</title>
+      {% endif %}
   </head>
 <body>
-    {% include 'final_nav_bar.html' %}
-    <br>
-    {% block title %}
-
-        Block title - will be replaced
-
-    {% endblock %}
-
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message}}
+    <header class="site header">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                    <! ––making it usable fo phone -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/products" class="navbar-brand">ThreeSquareGag</a>
+                </div>
+                <!-- Menu Items -->
+                <! ––appropriation to window -->
+                <div class="collapse navbar-collapse" id="mainNavBar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/products">Home</a></li>
+                        <li>
+                            <form class="form-inline" action="/search.myFilter">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-light my-sm-2" type="submit">Search</button>
+                            </form>
+                        </li>
+                        <!-- drop down menu -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">New</a></li>
+                                <li><a href="#">Nerd</a></li>
+                                <li><a href="#">Quotes</a></li>
+                                <li><a href="#">Programming</a></li>
+                                <li><a href="#">Daily struggle</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--right align -->
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                        {% else %}
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
-        {% endfor %}
-    {% endif %}
+        </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
 
-    {% block mainContent %}
+            <!-- Main content block of base.html -->
 
-        Block content - will be replaced
+            {% block title %} {% endblock %}
 
-    {% endblock %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
 
-    {%block content2%}
+            {% block mainContent %} {% endblock %}
 
-        Block content - will be replaced
-
-    {% endblock %}
+            {%block content2%} {% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

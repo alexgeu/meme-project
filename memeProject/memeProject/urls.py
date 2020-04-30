@@ -29,8 +29,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     #from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+    path('', home_view),
     path('admin/', admin.site.urls),
-    path('Welcome/', home_view),
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
@@ -38,7 +38,7 @@ urlpatterns = [
     path('search/', search),
     path('register/', register_views.register, name="register"),
     path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('profile/', register_views.profile, name='profile'),
     #path('', include('django.contrib.auth.urls')),
 ]
