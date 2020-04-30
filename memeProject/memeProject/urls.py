@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 # from register.views import register
@@ -27,11 +28,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    #from django.contrib.staticfiles.urls import staticfiles_urlpatterns
     path('admin/', admin.site.urls),
     path('Welcome/', home_view),
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
+    path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
     path('register/', register_views.register, name="register"),
@@ -39,7 +42,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('profile/', register_views.profile, name='profile'),
     #path('', include('django.contrib.auth.urls')),
-
 ]
 
 if settings.DEBUG:
