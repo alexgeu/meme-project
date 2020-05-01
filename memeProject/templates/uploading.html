@@ -19,7 +19,7 @@
     <p><b>Drag your super fancy meme into this box:</b></p>
  <form method = "post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+     {{ form.as_p }} </form>
         <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
             <script>
             function allowDrop(ev)
@@ -38,7 +38,7 @@
                 var data = ev.dataTransfer.getData("text");
                 ev.target.appendChild(document.getElementById(data));
             }
-    </form>
+
             </script><br><br><br><br><p></p>
         <label for="imgCaption">Caption:</label><br>
         <input type="text" id="imgCaption" name="imgCaption"><br>
@@ -50,6 +50,5 @@
             <option value="corona">Corona</option>
             </select><br>
         <p></p><input type="submit" value="Submit">
-    </form>
 </body>
 </html>

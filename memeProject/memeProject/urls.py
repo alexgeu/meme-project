@@ -34,7 +34,7 @@ urlpatterns = [
     path('search/', search),
     path('upload/', meme_image_view, name='upload' ),
     path('success/', success, name='success'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,
