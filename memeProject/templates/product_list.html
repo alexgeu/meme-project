@@ -14,18 +14,15 @@
 
 {%block content2%}
 
-<div class="row row-cols-1 row-cols-md-4">
+<div class="row row-cols-1 row-cols-md-5">
     {% for obj in allProducts %}
-
-
-        <div class="col mb-4">
+    <div class="col mb-4">
         <div class="card">
           <img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><a href=/products/{{obj.id}}>{{obj.title }} </a>({{ obj.price }})</h5>
             <p class="card-text">{{obj.summary }}</p>
           </div>
-        </div>
         </div>
 
 
