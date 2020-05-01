@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Products, Register
-from .forms import RawProductForm, RegisterForm, ProductCreateForm
+from .forms import RawProductForm, RegisterForm, ProductCreateForm, MemeImageForm
 from .filters import OrderFilter
 
 
@@ -81,5 +81,21 @@ def signup(httprequest, *args, **kwargs):
 
 def upload(httprequest, *args, **kwargs):
 	return render(httprequest, 'uploading.html')
+
+def meme_image_view(request):
+
+	if request.method == 'POST':
+		form = MemeImageForm(request.POST, httprequest.FILES)
+
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('success')
+	else:
+		form = MemeImageForm()
+	return render(request, 'uploading.html', {'form': form})
+
+def success(request):
+	message = "succesfully uploaded"
+	return HttpResponse(message)
 
 

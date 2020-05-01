@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from myViewSample.views import home_view
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload
+from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_image_view, success
 from django.urls import include
 
-urlpatterns = {
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('Welcome/', home_view),
     path('WelcomeClass/', HomeViewClass.as_view()),
@@ -30,5 +32,11 @@ urlpatterns = {
     path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
-    path('upload/', upload ),
-}
+    path('upload/', meme_image_view, name='upload' ),
+    path('success/', success, name='success'),
+]
+
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
+

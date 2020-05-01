@@ -16,8 +16,10 @@
 </head>
 
 <body>
-    <form>
-        <p><b>Drag your super fancy meme into this box:</b></p>
+    <p><b>Drag your super fancy meme into this box:</b></p>
+ <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
         <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
             <script>
             function allowDrop(ev)
@@ -36,6 +38,7 @@
                 var data = ev.dataTransfer.getData("text");
                 ev.target.appendChild(document.getElementById(data));
             }
+    </form>
             </script><br><br><br><br><p></p>
         <label for="imgCaption">Caption:</label><br>
         <input type="text" id="imgCaption" name="imgCaption"><br>

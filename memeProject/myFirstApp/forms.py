@@ -1,5 +1,5 @@
 from django import forms
-from .models import Products
+from .models import Products, MemeImage
 
 class RawProductForm(forms.Form):
 	title = forms.CharField()
@@ -21,3 +21,9 @@ class ProductCreateForm(forms.ModelForm):
 		if len(tmp) > 10:
 			raise forms.ValidationError('This is too long')
 		return tmp
+
+class MemeImageForm(forms.Form):
+
+	class Meta:
+		model = MemeImage
+		fields = ['imgCaption, meme_Main_Img']

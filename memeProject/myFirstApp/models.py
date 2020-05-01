@@ -15,4 +15,6 @@ class Register(models.Model):
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=100)
 
-    
+class MemeImage(models.Model):
+    imgCaption = models.CharField(max_length=200)
+    meme_Main_Img = models.ImageField(upload_to='images/')
