@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/profile_pics/Alexander.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/profile_pics/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0004_auto_20200421_1352.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0004_register.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0005_merge_20200430_1700.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myViewSample/static/meme_pic.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myViewSample/static/meme_pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myViewSample/static/meme_pic.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/register/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/register/signals.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/register/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/register/templates/registration/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/register/templates/users/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/memeProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/memeProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/memeProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/memeProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/register/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/final_nav_bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/final_nav_bar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,23 +11,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memeProject/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" selection-start-column="15" selection-end-column="15" />
+            <state relative-caret-position="735">
+              <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="78" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeProject/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/memeProject/templates/final_nav_bar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeProject/register/templates/register/register.html">
+        <entry file="file://$PROJECT_DIR$/memeProject/register/templates/registration/logout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeProject/register/templates/registration/login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret selection-end-column="25" />
@@ -64,57 +49,57 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeProject/templates/final_nav_bar.html">
+        <entry file="file://$PROJECT_DIR$/memeProject/register/templates/users/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="79" />
-              <folding>
-                <element signature="n#li#7;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeProject/templates/profile.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/memeProject/static/meme/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeProject/memeProject/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeProject/register/templates/users/profile.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeProject/manage.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/memeProject/register/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memeProject/memeProject/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-              <folding>
-                <element signature="e#637#669#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="435">
+              <caret line="40" column="89" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="12" selection-start-line="12" selection-end-line="12" />
-              </first_editor>
-              <second_editor />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeProject/memeProject/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2085">
+              <caret line="139" column="2" selection-start-line="139" selection-start-column="2" selection-end-line="139" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeProject/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -125,6 +110,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -134,20 +120,29 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/memeProject/memeProject/settings.py" />
-        <option value="$PROJECT_DIR$/memeProject/register/templates/register/register.html" />
-        <option value="$PROJECT_DIR$/memeProject/templates/base.html" />
-        <option value="$PROJECT_DIR$/memeProject/templates/final_nav_bar.html" />
-        <option value="$PROJECT_DIR$/memeProject/memeProject/urls.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/memeProject/static/meme/main.css" />
+        <option value="$PROJECT_DIR$/memeProject/templates/final_nav_bar.html" />
+        <option value="$PROJECT_DIR$/memeProject/templates/navbar.html.py" />
+        <option value="$PROJECT_DIR$/memeProject/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/memeProject/register/templates/register/register.html" />
+        <option value="$PROJECT_DIR$/memeProject/register/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/memeProject/templates/product_detail.html" />
+        <option value="$PROJECT_DIR$/memeProject/templates/home.html" />
+        <option value="$PROJECT_DIR$/memeProject/templates/base.html" />
+        <option value="$PROJECT_DIR$/memeProject/register/views.py" />
+        <option value="$PROJECT_DIR$/memeProject/memeProject/settings.py" />
+        <option value="$PROJECT_DIR$/memeProject/memeProject/urls.py" />
+        <option value="$PROJECT_DIR$/memeProject/register/templates/registration/logout.html" />
+        <option value="$PROJECT_DIR$/memeProject/register/templates/users/profile.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1454" />
-    <option name="y" value="29" />
-    <option name="width" value="1870" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectId" id="1aUpFnYKDBTrJ9M9yJ7giUCa7BN" />
   <component name="ProjectView">
@@ -155,6 +150,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,6 +167,19 @@
               <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="meme-project" type="462c0819:PsiDirectoryNode" />
               <item name="memeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meme-project" type="462c0819:PsiDirectoryNode" />
+              <item name="memeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="profile_pics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meme-project" type="462c0819:PsiDirectoryNode" />
+              <item name="memeProject" type="462c0819:PsiDirectoryNode" />
               <item name="memeProject" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -193,6 +202,14 @@
               <item name="register" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meme-project" type="462c0819:PsiDirectoryNode" />
+              <item name="memeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
@@ -206,13 +223,25 @@
               <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="meme-project" type="462c0819:PsiDirectoryNode" />
               <item name="memeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meme-project" type="462c0819:PsiDirectoryNode" />
+              <item name="memeProject" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="meme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meme-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meme-project" type="462c0819:PsiDirectoryNode" />
+              <item name="memeProject" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -254,7 +283,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19010006" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -293,44 +321,7 @@
     <state x="761" y="23" width="603" height="448" key="dock-window-1/0.23.1440.825@0.23.1440.825" timestamp="1587640629039" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/memeProject/memeProject/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/memeProject/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeProject/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeProject/register/templates/register/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeProject/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeProject/templates/final_nav_bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="79" />
-          <folding>
-            <element signature="n#li#7;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeProject/register/templates/users/profile.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/memeProject/templates/profile.html">
@@ -339,16 +330,6 @@
     <entry file="file://$PROJECT_DIR$/memeProject/memeProject/wsgi.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeProject/memeProject/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#637#669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -356,6 +337,115 @@
             <caret line="12" selection-start-line="12" selection-end-line="12" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/templates/navbar.html" />
+    <entry file="file://$PROJECT_DIR$/memeProject/register/templates/register/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/myFirstApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/templates/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/templates/product_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/register/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/register/templates/registration/logout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/register/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/register/templates/users/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/static/meme/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/register/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/memeProject/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="40" column="89" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/memeProject/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2085">
+          <caret line="139" column="2" selection-start-line="139" selection-start-column="2" selection-end-line="139" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/templates/final_nav_bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="78" />
         </state>
       </provider>
     </entry>
