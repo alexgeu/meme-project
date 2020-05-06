@@ -27,3 +27,4 @@ class MemeImageForm(forms.Form):
 	class Meta:
 		model = MemeImage
 		fields = ['imgCaption, meme_Main_Img']
+

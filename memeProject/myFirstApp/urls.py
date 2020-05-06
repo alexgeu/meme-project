@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myViewSample.views import home_view
-from myViewSample.views import HomeViewClass
+from .views import home
+#from .views import HomeViewClass
 from django.views.generic import TemplateView
 from myFirstApp.views import productList, productCreateView, productDetail
 

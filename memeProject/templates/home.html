@@ -10,19 +10,22 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a>
     </div>
 </div>
-
-{{ name }}
-<br>
-{{ lastname }}
-<br>
-{{ year }}
-<br>
-{% for item in myList%}
-{{ item }} <br>
-{% endfor%}
+    {% for post in posts %}
+         <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
 
 <!--{% load static %}
 <img src="{% static  "/sanders.jpeg" %}" alt="My image" width=400px/>
 -->
+
 
 {% endblock %}

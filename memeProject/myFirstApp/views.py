@@ -1,8 +1,29 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Products, Register
+from .models import Products, Register, Post
 from .forms import RawProductForm, RegisterForm, ProductCreateForm, MemeImageForm
 from .filters import OrderFilter
+
+posts = [
+    {
+        'author': 'CoreyMS',
+        'title': 'Blog Post 1',
+        'content': 'First post content',
+        'date_posted': 'August 27, 2018'
+    },
+    {
+        'author': 'Jane Doe',
+        'title': 'Blog Post 2',
+        'content': 'Second post content',
+        'date_posted': 'August 28, 2018'
+    }
+]
+
+def home(request):
+    context = {
+        'posts': posts
+    }
+    return render(request, 'home.html', context)
 
 
 def productCreateView(httprequest, *args, **kwargs):
@@ -88,8 +109,10 @@ def meme_image_view(request):
 		form = MemeImageForm(request.POST, httprequest.FILES)
 
 		if form.is_valid():
-			form.save()
+			newimg = uploading(title=request.POST['title'], image=request.FILES['image'])
+			newimg.save()
 			return HttpResponseRedirect('success')
+
 	else:
 		form = MemeImageForm()
 	return render(request, 'uploading.html', {'form': form})
@@ -97,5 +120,6 @@ def meme_image_view(request):
 def success(request):
 	message = "succesfully uploaded"
 	return HttpResponse(message)
+
 
 

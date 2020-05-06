@@ -17,16 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from myViewSample.views import home_view
-from myViewSample.views import HomeViewClass
+#from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_image_view, success
+from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_image_view, success, home
 from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Welcome/', home_view),
-    path('WelcomeClass/', HomeViewClass.as_view()),
+    path('Welcome/', home),
+    #path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
     path('profile/', signup),
@@ -34,7 +33,8 @@ urlpatterns = [
     path('search/', search),
     path('upload/', meme_image_view, name='upload' ),
     path('success/', success, name='success'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,

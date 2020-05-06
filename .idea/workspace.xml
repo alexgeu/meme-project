@@ -4,6 +4,13 @@
     <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeProject/memeProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/memeProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myViewSample/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myViewSample/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myViewSample/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myViewSample/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeProject/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeProject/templates/uploading.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/uploading.html" afterDir="false" />
     </list>
@@ -49,6 +56,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="231" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588401760801">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="231" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.23.1920.1057/0.23.1440.811@0.23.1440.811" timestamp="1588401760801" />
     <state x="214" y="98" key="SettingsEditor" timestamp="1586807741334">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
