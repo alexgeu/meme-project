@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Products, Register, Post
+from .models import Products, Register, Post, MemeImage
 from .forms import RawProductForm, RegisterForm, ProductCreateForm, MemeImageForm
 from .filters import OrderFilter
 
@@ -115,11 +115,12 @@ def meme_image_view(request):
 
 	else:
 		form = MemeImageForm()
-	return render(request, 'uploading.html', {'form': form})
+		return render(request, 'uploading.html', {'form': form})
 
 def success(request):
 	message = "succesfully uploaded"
 	return HttpResponse(message)
+
 
 
 
