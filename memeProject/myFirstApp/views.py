@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Products, Register, Post, MemeImage
 from .forms import RawProductForm, RegisterForm, ProductCreateForm, MemeImageForm
 from .filters import OrderFilter
+from django.views.generic import ListView
+from .models import Post
 
 posts = [
     {
@@ -24,6 +26,10 @@ def home(request):
         'posts': posts
     }
     return render(request, 'home.html', context)
+
+class HomePageView(ListView):
+	model = Post
+	template_name = 'home.html'
 
 
 def productCreateView(httprequest, *args, **kwargs):

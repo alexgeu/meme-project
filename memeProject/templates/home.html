@@ -10,6 +10,15 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a>
     </div>
 </div>
+
+<h1>Django Image Uploading</h1>
+<ul>
+  {% for post in object_list %}
+    <h2>{{ post.title }}</h2>
+    <img src="{{ post.cover.url}}" alt="{{ post.title }}">
+  {% endfor %}
+</ul>
+
     {% for post in posts %}
          <article class="media content-section">
           <div class="media-body">

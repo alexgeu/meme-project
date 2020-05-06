@@ -19,8 +19,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 #from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_image_view, success, home
+from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_image_view, success, home, HomePageView
 from django.urls import include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +34,8 @@ urlpatterns = [
     path('search/', search),
     path('upload/', meme_image_view, name='upload' ),
     path('success/', success, name='success'),
+    path('', include('myFirstApp.urls')),
+    path('', HomePageView.as_view(), name='home'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
