@@ -34,13 +34,12 @@ urlpatterns = [
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
-    path('products/', include('myFirstApp.urls')),
+    path('products/', include('myFirstApp.urls', namespace='products')),
     path('search/', search),
     path('register/', register_views.register, name="register"),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('profile/', register_views.profile, name='profile'),
-    #path('', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:

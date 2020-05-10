@@ -18,9 +18,13 @@ from django.urls import path
 from myViewSample.views import home_view
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail
+from myFirstApp.views import productList, productCreateView, productDetail, product_view, like_product
+
+app_name = 'products'
 
 urlpatterns = [
-    path('', productList),
+    #path('', productList),
     path('<int:my_id>', productDetail, name='product-detail'),
+    path('', product_view, name='product-list'),
+    path('like/', like_product, name='like-product'),
 ]
