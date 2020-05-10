@@ -2,9 +2,12 @@
 
 {% block mainContent %}
 <h1>{{ title }}</h1>
-<img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
+<br>
+{{ obj.title }}
+<br>
 
-{{ obj.title }} <br><br>
+<img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
+<br>
 {{obj.description}}
 <br>
 <strong>{{ obj.liked.all.count }} likes</strong>
