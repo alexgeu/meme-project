@@ -2,8 +2,11 @@
 
 {% block mainContent %}
 <h1>{{ title }}</h1>
+<img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
 
-{{ obj.title }} - {{ obj.price }} <br><br>
+{{ obj.title }} <br><br>
 {{obj.description}}
+<br>
+<strong>{{ obj.liked.all.count }} likes</strong>
 
 {% endblock %}
