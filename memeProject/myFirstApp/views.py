@@ -23,6 +23,18 @@ def productCreateView(httprequest, *args, **kwargs):
 	return render(httprequest, 'product_create_view.html', context)
 
 
+def search(httprequest, *args, **kwargs):
+	allProducts = Products.objects.all()
+	print(allProducts)
+	myFilter = OrderFilter(httprequest.GET, queryset=allProducts)
+	allProducts = myFilter.qs
+	context = {
+		'allProducts': allProducts,
+		'title': 'My product list',
+		'myFilter': myFilter
+	}
+	
+	return render(httprequest, 'product_list2.html', context)
 
 # Create your views here.
 def productList(httprequest, *args, **kwargs):
@@ -71,19 +83,6 @@ def like_product(request):
 		like.save()
 	return redirect('products:product-list')
 
-
-def search(httprequest, *args, **kwargs):
-	allProducts = Products.objects.all()
-	print(allProducts)
-	myFilter = OrderFilter(httprequest.GET, queryset=allProducts)
-	allProducts = myFilter.qs
-	context = {
-		'allProducts': allProducts,
-		'title': 'My product list',
-		'myFilter': myFilter
-	}
-	
-	return render(httprequest, 'product_list.html', context)
 
 def productDetail(httprequest, my_id, *args, **kwargs):
 	#oneProduct = Products.objects.get(id=2)

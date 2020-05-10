@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
+{% block searchContent %}
+<form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+{%endblock%}
 <h1>{{ 'LATEST MEMES' }}</h1
 
 
