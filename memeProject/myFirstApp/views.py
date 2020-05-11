@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Products, Register, Post, MemeImage
-from .forms import RawProductForm, RegisterForm, ProductCreateForm, MemeImageForm
+from .models import Products, Register, Post, Upload
+from .forms import RawProductForm, RegisterForm, ProductCreateForm, uploadCreateForm
 from .filters import OrderFilter
 from django.views.generic import ListView
 from .models import Post
@@ -106,27 +106,20 @@ def signup(httprequest, *args, **kwargs):
 	}
 	return render(httprequest, 'profile.html', context)
 
-def upload(httprequest, *args, **kwargs):
-	return render(httprequest, 'uploading.html')
+#def upload(httprequest, *args, **kwargs):
+#	return render(httprequest, 'uploading.html')
 
-def meme_image_view(request):
+def uploadCreateView(httprequest, *args, **kwargs):
+	my_form = uploadCreateForm(httprequest.POST or None)
+	if my_form.is_valid():
+		my_form.save()  # Products.objects.create(**my_form.cleaned_data)
+		my_form = uploadCreateForm()
+	# my_form = RawProductForm
 
-	if request.method == 'POST':
-		form = MemeImageForm(request.POST, httprequest.FILES)
-
-		if form.is_valid():
-			newimg = uploading(title=request.POST['title'], image=request.FILES['image'])
-			newimg.save()
-			return HttpResponseRedirect('success')
-
-	else:
-		form = MemeImageForm()
-		return render(request, 'uploading.html', {'form': form})
-
-def success(request):
-	message = "succesfully uploaded"
-	return HttpResponse(message)
-
+	context = {
+		'form': my_form
+	}
+	return render(httprequest, 'uploading.html', context)
 
 
 
