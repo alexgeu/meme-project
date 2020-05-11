@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block mainContent %}
+
 <form method="get">
-				{{myFilter.form}}
-
-		    <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-
+    {{myFilter.form}}
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+<br>
 <h1>{{ 'LATEST MEMES' }}</h1
 
 {%endblock%}
@@ -16,8 +16,6 @@
 
 <div class="row row-cols-1 row-cols-md-4">
     {% for obj in allProducts %}
-
-
         <div class="col mb-4">
         <div class="card">
           <img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
@@ -27,9 +25,6 @@
           </div>
         </div>
         </div>
-
-
-
     {% endfor%}
 </div>
 
