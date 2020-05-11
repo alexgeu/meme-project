@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/memeProject/templates/baseX.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/memeProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/memeProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/memeProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/memeProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/register/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/registration/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/registration/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/static/meme/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/static/meme/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memeProject/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-747">
-              <caret line="23" column="123" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
+            <state relative-caret-position="495">
+              <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -69,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/memeProject/static/meme/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="12" />
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -87,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/memeProject/memeProject/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3">
-              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               <folding>
                 <element signature="e#636#668#0" expanded="true" />
               </folding>
@@ -139,8 +131,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1687" />
+    <option name="y" value="115" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -284,7 +277,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18957011" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -478,7 +470,7 @@
     <entry file="file://$PROJECT_DIR$/memeProject/memeProject/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
           <folding>
             <element signature="e#636#668#0" expanded="true" />
           </folding>
@@ -519,14 +511,14 @@
     <entry file="file://$PROJECT_DIR$/memeProject/static/meme/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="12" />
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/memeProject/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-747">
-          <caret line="23" column="123" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
+        <state relative-caret-position="495">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
         </state>
       </provider>
     </entry>
