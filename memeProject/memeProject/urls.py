@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 #from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search, home, HomePageView, uploadCreateView
+from myFirstApp.views import productList, listmemes, productCreateView, productDetail, signup, search, home, HomePageView, uploadCreateView
 from django.urls import include
 
 
@@ -35,6 +35,7 @@ urlpatterns = [
     path('search/', search),
     path('', include('myFirstApp.urls')),
     path('', HomePageView.as_view(), name='home'),
+    path('all/', listmemes),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

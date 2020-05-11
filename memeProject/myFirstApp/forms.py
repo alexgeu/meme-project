@@ -25,10 +25,10 @@ class ProductCreateForm(forms.ModelForm):
 class uploadCreateForm(forms.ModelForm):
 	class Meta:
 		model = Upload
-		fields = ['imgCaption', 'meme_Main_Img']
+		fields = ['Caption', 'Image']
 
 	def clean_caption(self, *args, **kwargs):
-		tmp = self.cleaned_data.get('imgCaption')
+		tmp = self.cleaned_data.get('Caption')
 		if len(tmp) > 100:
 			raise forms.ValidationError('This is too long')
 		return tmp

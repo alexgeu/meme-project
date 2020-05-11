@@ -119,7 +119,21 @@ def uploadCreateView(httprequest, *args, **kwargs):
 	context = {
 		'form': my_form
 	}
-	return render(httprequest, 'uploading.html', context)
+	return render(httprequest, 'uploadtest.html', context)
+
+
+def listmemes(httprequest, *args, **kwargs):
+	allUpload = Upload.objects.all()
+	print(allUpload)
+	myFilter = OrderFilter(httprequest.GET, queryset=allUpload)
+	allUpload = myFilter.qs
+	context = {
+		'allUpload': allUpload,
+		'Caption': 'The caption',
+		'Image': 'My Memes',
+	}
+
+	return render(httprequest, 'memes_list.html', context)
 
 
 
