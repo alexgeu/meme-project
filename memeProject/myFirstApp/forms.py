@@ -22,8 +22,11 @@ class ProductCreateForm(forms.ModelForm):
 			raise forms.ValidationError('This is too long')
 		return tmp
 
+
+
 class MemeForm(forms.ModelForm):
 	class Meta:
 		model = Meme
 		fields = ('title', 'caption', 'image')
+
 

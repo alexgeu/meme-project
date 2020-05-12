@@ -18,9 +18,9 @@ from django.urls import path
 from .views import home
 #from .views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail
+from myFirstApp.views import productList, productCreateView, productDetail, meme_list, upload_meme
 
 urlpatterns = [
-    path('', productList),
-    path('<int:my_id>', productDetail, name='product-detail'),
+    path('', meme_list),
+    path('<int:my_id>', upload_meme, name='upload_meme'),
 ]

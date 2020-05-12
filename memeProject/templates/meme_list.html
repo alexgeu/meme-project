@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block mainContent %}
+    <h2>Memes</h2>
+
+    <p>
+        <a href="{% url 'upload_meme' %}" class="btn btn-primary">Upload Meme</a>
+    </p>
+
+
+<div class="jumbotron">
+            {% for meme in memes %}
+            <p>
+                <h3><p>{{ meme.title }}</p></h3>
+                <p>
+                    {% if meme.image %}
+                        <img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
+                    {% endif %}
+                </p>
+                <p>{{ meme.caption }}</p>
+            </p>
+            {% endfor %}
+</div>
+
+{% endblock %}

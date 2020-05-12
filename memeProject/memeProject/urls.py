@@ -19,14 +19,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 #from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, home, productCreateView, productDetail, signup, search, upload, meme_list, upload_meme
+from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_list, upload_meme
 from django.urls import include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Welcome/', home),
-    #path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
     path('profile/', signup),
@@ -34,7 +32,6 @@ urlpatterns = [
     path('search/', search),
     path('', include('myFirstApp.urls')),
     path('upload/', upload, name='upload'),
-    path('memes/', meme_list, name='meme_list'),
     path('memes/upload/', upload_meme, name='upload_meme'),
 ]
 
