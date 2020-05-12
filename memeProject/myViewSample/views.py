@@ -26,18 +26,18 @@ def home(request):
     return render(request, 'home.html', context)
 
 # Create your views here.
-#def home(httprequest, *args):
-#	my_dict = {
-#		'name' : 'Sasa',
-#		'lastname' : 'Malesevic',
-#		'year' : 1992,
-#		'myList' : ['this', 'is', 'my', 'list', 'hello']
-#	}
-#	return render(httprequest, 'home.html',my_dict)
+def home(httprequest, *args):
+	my_dict = {
+		'name' : 'Sasa',
+		'lastname' : 'Malesevic',
+		'year' : 1992,
+		'myList' : ['this', 'is', 'my', 'list', 'hello']
+	}
+	return render(httprequest, 'home.html',my_dict)
 
 
 
-#class HomeViewClass(View):
-#	def get(self, request):
-#		return HttpResponse('<h1>Hello World! through Class view</h1>')
+class HomeViewClass(View):
+	def get(self, request):
+		return HttpResponse('<h1>Hello World! through Class view</h1>')
 

@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 #from myViewSample.views import HomeViewClass
 # from register.views import register
 from register import views as register_views
-from myViewSample.views import home_view
+from myViewSample.views import home
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
 from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_list, upload_meme
@@ -33,8 +33,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view),
-    path('admin/', admin.site.urls),
+    #path('', home),
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
@@ -43,6 +42,7 @@ urlpatterns = [
     path('', include('myFirstApp.urls')),
     path('upload/', upload, name='upload'),
     path('memes/upload/', upload_meme, name='upload_meme'),
+    path('memes/', meme_list, name='meme_list'),
     path('register/', register_views.register, name="register"),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
