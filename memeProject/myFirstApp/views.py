@@ -1,36 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Products, Register, Post, Upload
-from .forms import RawProductForm, RegisterForm, ProductCreateForm, uploadCreateForm
+from .models import Products, Register, Meme
+from .forms import RawProductForm, RegisterForm, ProductCreateForm, MemeForm
 from .filters import OrderFilter
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from .models import Post
+from django.core.files.storage import FileSystemStorage
 
-posts = [
-    {
-        'author': 'CoreyMS',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'August 27, 2018'
-    },
-    {
-        'author': 'Jane Doe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'August 28, 2018'
-    }
-]
 
 def home(request):
-    context = {
-        'posts': posts
-    }
-    return render(request, 'home.html', context)
-
-class HomePageView(ListView):
-	model = Post
-	template_name = 'home.html'
-
+    return render(request, 'home.html')
 
 def productCreateView(httprequest, *args, **kwargs):
 	my_form = ProductCreateForm(httprequest.POST or None)
@@ -106,34 +85,35 @@ def signup(httprequest, *args, **kwargs):
 	}
 	return render(httprequest, 'profile.html', context)
 
-#def upload(httprequest, *args, **kwargs):
-#	return render(httprequest, 'uploading.html')
+def upload(request):
+	context = {}
+	if request.method == 'POST':
+		uploaded_file = request.FILES['document']
+		fs = FileSystemStorage()
+		name = fs.save(uploaded_file.name, uploaded_file)
+		context ['url'] = fs.url(name)
+	return render(request, 'upload.html', context)
 
-def uploadCreateView(httprequest, *args, **kwargs):
-	my_form = uploadCreateForm(httprequest.POST or None)
-	if my_form.is_valid():
-		my_form.save()  # Products.objects.create(**my_form.cleaned_data)
-		my_form = uploadCreateForm()
-	# my_form = RawProductForm
+def meme_list(request):
+	memes = Meme.objects.all()
+	return render(request, 'meme_list.html', {
+		'memes': memes
+	})
 
-	context = {
-		'form': my_form
-	}
-	return render(httprequest, 'uploadtest.html', context)
+def upload_meme(request):
+	if request.method == 'POST':
+		form = MemeForm(request.POST, request.FILES)
+		if form.is_valid():
+			form.save()
+			return redirect('meme_list')
+	else:
+		form = MemeForm()
+	return render(request, 'upload_meme.html', {
+		'form': form
+	})
 
 
-def listmemes(httprequest, *args, **kwargs):
-	allUpload = Upload.objects.all()
-	print(allUpload)
-	myFilter = OrderFilter(httprequest.GET, queryset=allUpload)
-	allUpload = myFilter.qs
-	context = {
-		'allUpload': allUpload,
-		'Caption': 'The caption',
-		'Image': 'My Memes',
-	}
 
-	return render(httprequest, 'memes_list.html', context)
 
 
 

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Products, Upload
+from .models import Products, Meme
 
 class RawProductForm(forms.Form):
 	title = forms.CharField()
@@ -22,14 +22,8 @@ class ProductCreateForm(forms.ModelForm):
 			raise forms.ValidationError('This is too long')
 		return tmp
 
-class uploadCreateForm(forms.ModelForm):
+class MemeForm(forms.ModelForm):
 	class Meta:
-		model = Upload
-		fields = ['Caption', 'Image']
-
-	def clean_caption(self, *args, **kwargs):
-		tmp = self.cleaned_data.get('Caption')
-		if len(tmp) > 100:
-			raise forms.ValidationError('This is too long')
-		return tmp
+		model = Meme
+		fields = ('title', 'caption', 'image')
 

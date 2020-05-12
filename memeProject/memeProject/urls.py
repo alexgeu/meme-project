@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 #from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, listmemes, productCreateView, productDetail, signup, search, home, HomePageView, uploadCreateView
+from myFirstApp.views import productList, home, productCreateView, productDetail, signup, search, upload, meme_list, upload_meme
 from django.urls import include
 
 
@@ -28,18 +28,17 @@ urlpatterns = [
     path('Welcome/', home),
     #path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
-    path('upload/', uploadCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
     path('profile/', signup),
     path('products/', include('myFirstApp.urls')),
     path('search/', search),
     path('', include('myFirstApp.urls')),
-    path('', HomePageView.as_view(), name='home'),
-    path('all/', listmemes),
+    path('upload/', upload, name='upload'),
+    path('memes/', meme_list, name='meme_list'),
+    path('memes/upload/', upload_meme, name='upload_meme'),
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
-        urlpatterns += static(settings.MEDIA_URL,
-                              document_root=settings.MEDIA_ROOT)
+        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+        urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

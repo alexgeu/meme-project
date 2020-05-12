@@ -26,9 +26,13 @@ class Register(models.Model):
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=100)
 
-class Upload(models.Model):
-    Caption = models.CharField(max_length=200)
-    Image = models.ImageField(default='default.jpg', upload_to='images/', blank = True)
+class Meme(models.Model):
+    title = models.CharField(max_length=100)
+    caption = models.TextField(max_length=500)
+    image = models.ImageField(upload_to='media/meme_images/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
 
 
 
