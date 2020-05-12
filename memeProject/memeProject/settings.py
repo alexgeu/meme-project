@@ -37,7 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+
+    #third party apps
+    'crispy_forms',
+
+    #my own apps
+    'register',
     'django_filters',
+
     #myApps
     'myFirstApp',
     'myViewSample',
@@ -58,7 +66,7 @@ ROOT_URLCONF = 'memeProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates"),],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,6 +132,22 @@ USE_TZ = True
 STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+
 #for image upload, MEDIA_ROOT for server path to store files, MEDIA_URL reference URL for browser
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+# Serving files uploaded by a user during development
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK="bootstrap4"
+
+LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = 'logout'
+LOGIN_URL = 'login'
+

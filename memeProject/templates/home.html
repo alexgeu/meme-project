@@ -2,6 +2,18 @@
 
 {% block mainContent %}
 
+<h1>Check out our memes</h1>
+
+{{ name }}
+<br>
+{{ lastname }}
+<br>
+{{ year }}
+<br>
+{% for item in myList%}
+{{ item }} <br>
+{% endfor%}
+
 <!--{% load static %}
 <img src="{% static  "/sanders.jpeg" %}" alt="My image" width=400px/>
 -->
