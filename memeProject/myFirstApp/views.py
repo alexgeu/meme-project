@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Products, Register, Like
-from .forms import RawProductForm, RegisterForm, ProductCreateForm
+from .models import Products, Register, Like, Comment
+from .forms import *
 from .filters import OrderFilter
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404, request
@@ -84,15 +84,40 @@ def like_product(request):
 	return redirect('products:product-list')
 
 
-def productDetail(httprequest, my_id, *args, **kwargs):
-	#oneProduct = Products.objects.get(id=2)
+def productCreateView(httprequest, *args, **kwargs):
+	my_form = ProductCreateForm(httprequest.POST or None)
+	if my_form.is_valid():
+		my_form.save()  # Products.objects.create(**my_form.cleaned_data)
+		my_form = ProductCreateForm()
+	# my_form = RawProductForm
+	
+	context = {
+		'form': my_form
+	}
+	return render(httprequest, 'product_create_view.html', context)
+
+
+def productDetail(request, my_id, *args, **kwargs):
 	oneProduct = get_object_or_404(Products, id=my_id)
+	comments = Comment.objects.filter(product=my_id).order_by('-id')
+	comment_form = CommentForm(request.POST or None)
+	if request.method == 'POST':
+		if comment_form.is_valid():
+			content = request.POST.get('content')
+			comment = Comment.objects.create(product=oneProduct, user=request.user, content=content)
+			comment.save()
+
+			return HttpResponseRedirect(oneProduct.get_absolute_url())
+		else:
+			comment_form = CommentForm()
 	context = {
 	'obj' : oneProduct,
-	'title' : 'Product Details'
+	'title' : 'Product Details',
+	'comments' : comments,
+	'comment_form' : comment_form,
 	}
-	
-	return render(httprequest,'product_detail.html', context)
+
+	return render(request,'product_detail.html', context)
 
 
 def signup(httprequest, *args, **kwargs):

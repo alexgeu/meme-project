@@ -49,3 +49,13 @@ class Like(models.Model):
     
     def __str__(self):
         return str (self.product)
+
+class Comment(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    content = models.TextField(max_length=240)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    liked = models.ManyToManyField(User, default=None, blank=True, related_name='commented')
+
+    def __str__(self):
+        return '{}-{}'.format(self.product, str(self.user.username))

@@ -12,4 +12,4 @@ class OrderFilter(django_filters.FilterSet):
 	class Meta:
 		model = Products
 		fields = '__all__'
-		exclude = ['user', 'liked', 'summary', 'description', 'start_date', 'end_date']
+		exclude = ['user', 'liked', 'summary', 'description', 'start_date', 'end_date', 'price']

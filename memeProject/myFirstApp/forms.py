@@ -1,5 +1,5 @@
 from django import forms
-from .models import Products
+from .models import Products, Comment
 from django import forms
 from django.contrib.auth.models import User
 
@@ -14,11 +14,19 @@ class ProductCreateForm(forms.ModelForm):
 		model = Products
 		fields = ['title', 'description', 'price',]
 	
+
 	def clean_title(self, *args, **kwargs):
 		tmp = self.cleaned_data.get('title')
 		if len(tmp) > 10:
 			raise forms.ValidationError('This is too long')
 		return tmp
+
+class CommentForm(forms.ModelForm):
+	class Meta:
+		model = Comment
+		fields = ['content',]
+		
+
 
 #ALEX COPY
 
