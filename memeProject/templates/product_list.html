@@ -16,9 +16,13 @@
               <form action="{% url 'products:like-product'%}" method="POST" class=" ui form"> {% csrf_token %}
                   <input type="hidden" name="product_id" value="{{obj.id}}">
                   {% if user not in obj.liked.all %}
-                        <button class="ui button positive" type="submit">Like</button>
+                        <!--<button class="ui button positive" type="submit">Like</button> -->
+                        <button class="badge badge-pill badge-primary" type="submit">Like</button>
+
                   {% else %}
-                        <button class="ui button negative" type="submit">Unlike</button>
+                        <!-- <button class="ui button negative" type="submit">Unlike</button> -->
+                        <button class="badge badge-pill badge-danger" type="submit">Unike</button>
+
                   {% endif %}
               </form>
               <strong>{{ obj.liked.all.count }} likes</strong>

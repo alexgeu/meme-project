@@ -34,7 +34,7 @@ def search(httprequest, *args, **kwargs):
 		'myFilter': myFilter
 	}
 	
-	return render(httprequest, 'product_list2.html', context)
+	return render(httprequest, 'search_product_list.html', context)
 
 # Create your views here.
 def productList(httprequest, *args, **kwargs):
