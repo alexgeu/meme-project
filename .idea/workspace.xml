@@ -11,13 +11,17 @@
     </list>
 =======
     </list>
+<<<<<<< HEAD
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
 >>>>>>> 037e807994c0fc6b1600a794405065dfcfecaba5
+=======
+>>>>>>> 78dbbe7a129aa13dc2d3b938a12e65603c762216
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,6 +38,8 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+=======
+>>>>>>> 78dbbe7a129aa13dc2d3b938a12e65603c762216
 =======
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -132,6 +138,7 @@
       </file>
     </leaf>
   </component>
+>>>>>>> f39ed22d8e04af9c8bf0d50498a8e68ca29ee111
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -148,6 +155,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1454" />
+    <option name="y" value="29" />
+    <option name="width" value="1870" />
+    <option name="height" value="1039" />
+  </component>
+  <component name="ProjectId" id="1aUpFnYKDBTrJ9M9yJ7giUCa7BN" />
+=======
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -286,6 +302,7 @@
     </panes>
 >>>>>>> 037e807994c0fc6b1600a794405065dfcfecaba5
   </component>
+>>>>>>> f39ed22d8e04af9c8bf0d50498a8e68ca29ee111
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
@@ -301,6 +318,7 @@
 =======
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+<<<<<<< HEAD
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -314,6 +332,8 @@
     </option>
 >>>>>>> 037e807994c0fc6b1600a794405065dfcfecaba5
   </component>
+=======
+>>>>>>> 78dbbe7a129aa13dc2d3b938a12e65603c762216
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -328,6 +348,7 @@
     <servers />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="231" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588401760801">
       <screen x="0" y="23" width="1440" height="811" />
@@ -341,6 +362,8 @@
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="529" y="158" width="670" height="676" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1589279989222" />
+=======
+>>>>>>> 78dbbe7a129aa13dc2d3b938a12e65603c762216
 =======
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1057" extended-state="0" />
@@ -366,6 +389,7 @@
     </layout>
 >>>>>>> 037e807994c0fc6b1600a794405065dfcfecaba5
   </component>
+>>>>>>> f39ed22d8e04af9c8bf0d50498a8e68ca29ee111
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
@@ -383,6 +407,8 @@
     </state>
     <state x="761" y="23" width="603" height="448" key="dock-window-1/0.23.1440.825@0.23.1440.825" timestamp="1587640629039" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/memeProject/manage.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -573,4 +599,5 @@
       </provider>
     </entry>
   </component>
+>>>>>>> f39ed22d8e04af9c8bf0d50498a8e68ca29ee111
 </project>
