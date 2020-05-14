@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
-from .models import Products, Register
-from .forms import RawProductForm, RegisterForm, ProductCreateForm
+from .models import Products
+from .forms import RawProductForm, ProductCreateForm
 from .filters import OrderFilter
 
 
@@ -66,16 +66,4 @@ def productDetail(httprequest, my_id, *args, **kwargs):
 	}
 	
 	return render(httprequest,'product_detail.html', context)
-
-
-def signup(httprequest, *args, **kwargs):
-	my_form = RegisterForm(httprequest.POST or None)
-	if my_form.is_valid():
-		Register.objects.create(**my_form.cleaned_data)
-		my_form = RegisterForm
-	
-	context = {
-		'form': my_form
-	}
-	return render(httprequest, 'profile.html', context)
 

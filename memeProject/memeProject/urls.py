@@ -21,7 +21,7 @@ from register import views as register_views
 from myViewSample.views import home_view
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search
+from myFirstApp.views import productList, productCreateView, productDetail, search
 from django.urls import include
 from django.contrib.auth import views as auth_views
 from django.conf import settings
