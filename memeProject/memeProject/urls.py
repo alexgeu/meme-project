@@ -24,7 +24,7 @@ from register import views as register_views
 from myViewSample.views import home
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, signup, search, upload, meme_list, upload_meme
+from myFirstApp.views import productList, productCreateView, productDetail, search, upload, meme_list, upload_meme
 from myFirstApp.views import *
 from django.urls import include
 from django.contrib.auth import views as auth_views
@@ -37,8 +37,8 @@ urlpatterns = [
     #path('', home),
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
-    path('products/<int:my_id>', productDetail, name='product-detail'),
-    path('products/', include('myFirstApp.urls', namespace='products')),
+    #path('products/<int:my_id>', productDetail, name='product-detail'),
+    #path('products/', include('myFirstApp.urls', namespace='products')),
     path('search/', search),
     path('', include('myFirstApp.urls')),
     path('upload/', upload, name='upload'),

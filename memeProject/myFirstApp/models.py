@@ -44,10 +44,6 @@ class Products(models.Model):
         return self.liked.all().count
 
 
-class Register(models.Model):
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=100)
-
 class Meme(models.Model):
     title = models.CharField(max_length=100)
     caption = models.TextField(max_length=500)

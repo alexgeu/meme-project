@@ -1,5 +1,5 @@
-from .models import Products, Register, Meme, Like, Comment
-from .forms import RawProductForm, RegisterForm, ProductCreateForm, MemeForm
+from .models import Products, Meme, Like, Comment
+from .forms import RawProductForm, ProductCreateForm, MemeForm
 from django.views.generic import ListView, TemplateView, RedirectView
 from .models import Post
 from django.core.files.storage import FileSystemStorage
@@ -14,7 +14,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from .forms import RegisterForm
 #from django.contrib.auth import login, authenticate, logout
 #from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView
@@ -120,17 +119,6 @@ def productDetail(request, my_id, *args, **kwargs):
 
 	return render(request,'product_detail.html', context)
 
-def signup(httprequest, *args, **kwargs):
-	my_form = RegisterForm(httprequest.POST or None)
-	if my_form.is_valid():
-		Register.objects.create(**my_form.cleaned_data)
-		my_form = RegisterForm
-	
-	context = {
-		'form': my_form
-	}
-	return render(httprequest, 'profile.html', context)
-
 def upload(request):
 	context = {}
 	if request.method == 'POST':
@@ -157,25 +145,5 @@ def upload_meme(request):
 	return render(request, 'upload_meme.html', {
 		'form': form
 	})
-
-
-# Create your views here.
-def register(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Your account has been created ({username})! Your are now able to login.')
-            return redirect('/login')
-    else:
-        form = RegisterForm()
-
-    return render(request, "register/register.html", {"form": form})
-
-# Decorator to check if user is logged in
-@login_required
-def profile(request):
-    return render(request, 'users/profile.html')
 
 
