@@ -10,9 +10,3 @@ class Products(models.Model):
     
     def get_absolute_url(self):
         return reverse('product-detail', kwargs={'my_id' : self.id})
-
-class Register(models.Model):
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=100)
-
-    

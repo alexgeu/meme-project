@@ -6,11 +6,6 @@ class RawProductForm(forms.Form):
 	description = forms.CharField()
 	price = forms.DecimalField()
 	
-	
-class RegisterForm(forms.Form):
-	username = forms.CharField()
-	password = forms.CharField()
-	
 class ProductCreateForm(forms.ModelForm):
 	class Meta:
 		model = Products
