@@ -38,7 +38,7 @@ urlpatterns = [
     path('WelcomeClass/', HomeViewClass.as_view()),
     path('create/', productCreateView, name=''),
     path('products/<int:my_id>', productDetail, name='product-detail'),
-    #path('products/', include('myFirstApp.urls', namespace='products')),
+    path('products/', include('myFirstApp.urls', namespace='products')),
     path('search/', search),
     path('', include('myFirstApp.urls')),
     path('upload/', upload, name='upload'),

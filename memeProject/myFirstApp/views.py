@@ -120,7 +120,6 @@ def productDetail(request, my_id, *args, **kwargs):
 
 	return render(request,'product_detail.html', context)
 
-
 def signup(httprequest, *args, **kwargs):
 	my_form = RegisterForm(httprequest.POST or None)
 	if my_form.is_valid():
