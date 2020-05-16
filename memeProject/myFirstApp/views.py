@@ -1,4 +1,4 @@
-from .models import Products, Meme, Like, Comment
+from .models import Products, Comment, Like, LIKE_CHOICES
 from .forms import RawProductForm, ProductCreateForm, MemeForm
 from django.views.generic import ListView, TemplateView, RedirectView
 from .models import Post
@@ -18,6 +18,27 @@ from django.contrib.auth import logout
 #from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView
 
+
+def like_product(request):
+	user = request.user
+	if request.method == 'POST':
+		meme_id = request.POST.get('meme_id')
+		meme_obj = Meme.objects.get(id=meme_id)
+		
+		if user in meme_obj.liked.all():
+			meme_obj.liked.remove(user)
+		else:
+			meme_obj.liked.add(user)
+		
+		like, created = Like.objects.get_or_create(user=user, meme_id=meme_id)
+		
+		if not created:
+			if like.value == 'Like':
+				like.value = 'Unlike'
+			else:
+				like.value = 'Like'
+		like.save()
+	return redirect('memes:meme-list')
 
 def home(request):
     return render(request, 'home.html')
@@ -63,9 +84,6 @@ def product_view(request,*args, **kwargs):
 	}
 	return render(request, 'meme_list.html', context)
 '''
-
-
-
 def like_product(request):
 	user = request.user
 	if request.method == 'POST':

@@ -27,7 +27,7 @@ urlpatterns = [
     #path('', productList),
     path('', meme_list, name='meme-list'),
     path('<int:my_id>', upload_meme, name='upload_meme'),
-    path('/memes/<int:my_id>', productDetail, name='meme-detail'),
+    path('memes/<int:my_id>', productDetail, name='meme-detail'),
     #path('', product_view, name='product-list'),
     path('like/', like_product, name='like-meme'),
 ]

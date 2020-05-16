@@ -74,7 +74,7 @@ class Like(models.Model):
     @property
     def num_likes(self):
         return self.liked.all().count
-        
+    
 class Comment(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, default=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)

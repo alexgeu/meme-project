@@ -1,6 +1,6 @@
 from django import forms
-from .models import Products, Meme
-from .models import Products, Comment
+
+from .models import *
 from django import forms
 from django.contrib.auth.models import User
 
