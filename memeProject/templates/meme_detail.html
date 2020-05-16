@@ -3,12 +3,12 @@
 {% block mainContent %}
 <h1>{{ title }}</h1>
 <br>
-{{ obj.title }}
+<h2>{{ meme.title }}</h2>
 <br>
 
-<img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
+<img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
 <br>
-{{obj.description}}
+<h5>{{meme.caption}}</h5>
 <br>
 <strong>{{ obj.liked.all.count }} likes</strong>
 

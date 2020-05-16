@@ -16,19 +16,18 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from .views import home
+from .views import *
 #from .views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import productList, productCreateView, productDetail, meme_list, upload_meme, like_product, product_view
-
+from myFirstApp.views import *
 
 app_name = 'products'
 
 urlpatterns = [
     #path('', productList),
-    path('', meme_list),
+    path('', meme_list, name='meme-list'),
     path('<int:my_id>', upload_meme, name='upload_meme'),
-    path('<int:my_id>', productDetail, name='product-detail'),
-    path('', product_view, name='product-list'),
-    path('like/', like_product, name='like-product'),
+    path('/memes/<int:my_id>', productDetail, name='meme-detail'),
+    #path('', product_view, name='product-list'),
+    path('like/', like_product, name='like-meme'),
 ]

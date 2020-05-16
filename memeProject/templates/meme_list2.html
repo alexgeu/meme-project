@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block mainContent %}
+    <h2>Memes</h2>
+
+    <p>
+        <a href="{% url 'upload_meme' %}" class="btn btn-primary">Upload Meme</a>
+    </p>
+
+
+<div class="jumbotron">
+            {% for meme in memes %}
+            <p>
+                <h3><p>{{ meme.title }}</p></h3>
+                <p>
+                    {% if meme.image %}
+                        <img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
+                    {% endif %}
+                </p>
+                <p>{{ meme.caption }}</p>
+            </p>
+            {% endfor %}
+</div>
+
+{% endblock %}
+
+<h1>{{ 'LATEST MEMES' }}</h1
+
+
+
+{%block content2%}
+
+    {% for obj in allProducts %}
+            <h5 class="card-title"><a href=/products/{{obj.id}}>{{obj.title }} </a></h5>
+              <form action="{% url 'products:like-product'%}" method="POST" class=" ui form"> {% csrf_token %}
+                  <input type="hidden" name="product_id" value="{{obj.id}}">
+                  {% if user not in obj.liked.all %}
+                        <button class="ui button positive" type="submit">Like</button>
+                  {% else %}
+                        <button class="ui button negative" type="submit">Unlike</button>
+                  {% endif %}
+              </form>
+              <strong>{{ obj.liked.all.count }} likes</strong>
+            <p class="card-text">{{obj.summary }}</p>
+          </div>
+        </div>
+
+
+
+    {% endfor%}
+</div>
+
+{% endblock %}

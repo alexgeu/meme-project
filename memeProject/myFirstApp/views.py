@@ -21,7 +21,7 @@ from django.views.generic import View, TemplateView
 
 def home(request):
     return render(request, 'home.html')
-
+'''
 def productCreateView(httprequest, *args, **kwargs):
 	my_form = ProductCreateForm(httprequest.POST or None)
 	if my_form.is_valid():
@@ -33,10 +33,10 @@ def productCreateView(httprequest, *args, **kwargs):
 		'form': my_form
 	}
 	return render(httprequest, 'product_create_view.html', context)
-
+'''
 
 def search(httprequest, *args, **kwargs):
-	allProducts = Products.objects.all()
+	allProducts = Meme.objects.all()
 	print(allProducts)
 	myFilter = OrderFilter(httprequest.GET, queryset=allProducts)
 	allProducts = myFilter.qs
@@ -46,9 +46,88 @@ def search(httprequest, *args, **kwargs):
 		'myFilter': myFilter
 	}
 	
-	return render(httprequest, 'product_list2.html', context)
+	return render(httprequest, 'meme_list2.html', context)
 
-# Create your views here.
+
+'''
+def product_view(request,*args, **kwargs):
+	qs = Meme.objects.all()
+	user = request.user
+	allProducts = Products.objects.all()
+
+	context = {
+		'qs': qs,
+		'user': user,
+		'allProducts': allProducts,
+		'title': 'My product list'
+	}
+	return render(request, 'meme_list.html', context)
+'''
+
+
+
+def like_product(request):
+	user = request.user
+	if request.method == 'POST':
+		meme_id = request.POST.get('meme_id')
+		meme_obj = Meme.objects.get(id=meme_id)
+		
+		if user in meme_obj.liked.all():
+			meme_obj.liked.remove(user)
+		else:
+			meme_obj.liked.add(user)
+		
+		like, created = Like.objects.get_or_create(user=user, meme_id=meme_id)
+		
+		if not created:
+			if like.value == 'Like':
+				like.value = 'Unlike'
+			else:
+				like.value = 'Like'
+		like.save()
+	return redirect('memes:meme-list')
+
+
+def productDetail(request, my_id, *args, **kwargs):
+	oneProduct = get_object_or_404(Meme, id=my_id)
+	#comments = Comment.objects.filter(product=my_id).order_by('-id')
+	#comment_form = CommentForm(request.POST or None)
+	'''if request.method == 'POST':
+		if comment_form.is_valid():
+			content = request.POST.get('content')
+			comment = Comment.objects.create(product=oneProduct, user=request.user, content=content)
+			comment.save()
+
+			return HttpResponseRedirect(oneProduct.get_absolute_url())
+		else:
+			comment_form = CommentForm()'''
+	context = {
+	'meme' : oneProduct,
+	'title' : 'Product Details',
+	#'comments' : comments,
+	#'comment_form' : comment_form,
+	}
+
+	return render(request,'meme_detail.html', context)
+
+def upload(request):
+	context = {}
+	if request.method == 'POST':
+		uploaded_file = request.FILES['document']
+		fs = FileSystemStorage()
+		name = fs.save(uploaded_file.name, uploaded_file)
+		context ['url'] = fs.url(name)
+	return render(request, 'upload.html', context)
+
+#checked
+def meme_list(request):
+	memes = Meme.objects.all()
+	print(memes)
+	return render(request, 'meme_list.html', {
+		'memes': memes
+	})
+
+#checked
 def productList(httprequest, *args, **kwargs):
 	allProducts = Products.objects.all()
 	print(allProducts)
@@ -60,43 +139,19 @@ def productList(httprequest, *args, **kwargs):
 	return render(httprequest, 'product_list.html', context)
 
 
-def product_view(request,*args, **kwargs):
-	qs = Products.objects.all()
-	user = request.user
-	allProducts = Products.objects.all()
-
-	context = {
-		'qs': qs,
-		'user': user,
-		'allProducts': allProducts,
-		'title': 'My product list'
-	}
-	return render(request, 'product_list.html', context)
-
-
-
-
-def like_product(request):
-	user = request.user
+def upload_meme(request):
 	if request.method == 'POST':
-		product_id = request.POST.get('product_id')
-		product_obj = Products.objects.get(id=product_id)
-		
-		if user in product_obj.liked.all():
-			product_obj.liked.remove(user)
-		else:
-			product_obj.liked.add(user)
-		
-		like, created = Like.objects.get_or_create(user=user, product_id=product_id)
-		
-		if not created:
-			if like.value == 'Like':
-				like.value = 'Unlike'
-			else:
-				like.value = 'Like'
-		like.save()
-	return redirect('products:product-list')
+		form = MemeForm(request.POST, request.FILES)
+		if form.is_valid():
+			form.save()
+			return redirect('meme_list')
+	else:
+		form = MemeForm()
+	return render(request, 'upload_meme.html', {
+		'form': form
+	})
 
+'''
 def productDetail(request, my_id, *args, **kwargs):
 	oneProduct = get_object_or_404(Products, id=my_id)
 	comments = Comment.objects.filter(product=my_id).order_by('-id')
@@ -116,34 +171,4 @@ def productDetail(request, my_id, *args, **kwargs):
 	'comments' : comments,
 	'comment_form' : comment_form,
 	}
-
-	return render(request,'product_detail.html', context)
-
-def upload(request):
-	context = {}
-	if request.method == 'POST':
-		uploaded_file = request.FILES['document']
-		fs = FileSystemStorage()
-		name = fs.save(uploaded_file.name, uploaded_file)
-		context ['url'] = fs.url(name)
-	return render(request, 'upload.html', context)
-
-def meme_list(request):
-	memes = Meme.objects.all()
-	return render(request, 'meme_list.html', {
-		'memes': memes
-	})
-
-def upload_meme(request):
-	if request.method == 'POST':
-		form = MemeForm(request.POST, request.FILES)
-		if form.is_valid():
-			form.save()
-			return redirect('meme_list')
-	else:
-		form = MemeForm()
-	return render(request, 'upload_meme.html', {
-		'form': form
-	})
-
-
+'''

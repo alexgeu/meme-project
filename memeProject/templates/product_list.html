@@ -13,7 +13,8 @@
           <img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><a href=/products/{{obj.id}}>{{obj.title }} </a>({{ obj.price }})</h5>
-              <form action="{% url 'products:like-product'%}" method="POST" class=" ui form"> {% csrf_token %}
+              <form action="{% url 'products:like-product'%}" method="POST" class=" ui form">
+              {% csrf_token %}
                   <input type="hidden" name="product_id" value="{{obj.id}}">
                   {% if user not in obj.liked.all %}
                         <button class="ui button positive" type="submit">Like</button>
