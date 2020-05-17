@@ -30,6 +30,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from myFirstApp.views import productDetail, search_meme
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,7 +39,7 @@ urlpatterns = [
     #path('create/', productCreateView, name=''),
     #path('products/<int:my_id>', productDetail, name='product-detail'),
     #path('products/', include('myFirstApp.urls', namespace='products')),
-    path('search/', search),
+    path('search/', search_meme),
     path('', include('myFirstApp.urls', namespace='memes')),
     path('upload/', upload, name='upload'),
     path('memes/upload/', upload_meme, name='upload_meme'),

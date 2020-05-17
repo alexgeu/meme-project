@@ -1,6 +1,6 @@
 import django_filters
 from django_filters import DateFilter, CharFilter
-from .models import *
+from .models import Meme
 
 
 class OrderFilter(django_filters.FilterSet):
@@ -10,6 +10,6 @@ class OrderFilter(django_filters.FilterSet):
 	title = CharFilter(label='title', lookup_expr='icontains')
 	
 	class Meta:
-		model = Products
+		model = Meme
 		fields = '__all__'
-		exclude = ['user', 'liked', 'summary', 'description', 'start_date', 'end_date', 'price']
+		exclude = ['liked', 'image', 'user', 'caption']

@@ -10,7 +10,7 @@
 <br>
 <h5>{{meme.caption}}</h5>
 <br>
-<strong>{{ obj.liked.all.count }} likes</strong>
+<strong>{{ meme.liked.all.count }} likes</strong>
 
 <form method="post">
     {% csrf_token %}
@@ -22,16 +22,18 @@
     {% endif %}
 
 </form>
+<br>
+<br>
 
 <div class="main-comment-section">
-    {{ comments.count }} Comment{{ comments|pluralize }}
+    {{ comments.count }} Comments {{ comments|pluralize }}
     {% for comment in comments %}
 
-    <blockquote class="blockquote">
-      <p class="mb-0">{{ comment.content }} </p>
-      <footer class="blockquote-footer">by <cite title="Source Title">{{ comment.user|capfirst}}</cite></footer>
+        <blockquote class="blockquote">
+          <p class="mb-0">{{ comment.content }} </p>
+          <footer class="blockquote-footer">by {{ comment.user|capfirst}}</footer>
 
-    </blockquote>
+        </blockquote>
     {% endfor %}
 </div>
 {% endblock %}

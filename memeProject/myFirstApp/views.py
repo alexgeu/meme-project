@@ -19,26 +19,6 @@ from django.contrib.auth import logout
 from django.views.generic import View, TemplateView
 
 
-def like_product(request):
-	user = request.user
-	if request.method == 'POST':
-		meme_id = request.POST.get('meme_id')
-		meme_obj = Meme.objects.get(id=meme_id)
-		
-		if user in meme_obj.liked.all():
-			meme_obj.liked.remove(user)
-		else:
-			meme_obj.liked.add(user)
-		
-		like, created = Like.objects.get_or_create(user=user, meme_id=meme_id)
-		
-		if not created:
-			if like.value == 'Like':
-				like.value = 'Unlike'
-			else:
-				like.value = 'Like'
-		like.save()
-	return redirect('memes:meme-list')
 
 def home(request):
     return render(request, 'home.html')
@@ -56,25 +36,27 @@ def productCreateView(httprequest, *args, **kwargs):
 	return render(httprequest, 'product_create_view.html', context)
 '''
 
-def search(httprequest, *args, **kwargs):
+def search_meme(request, *args, **kwargs):
 	allProducts = Meme.objects.all()
 	print(allProducts)
-	myFilter = OrderFilter(httprequest.GET, queryset=allProducts)
+	memes = allProducts.all()
+	myFilter = OrderFilter(request.GET, queryset=memes)
+	print(myFilter)
 	allProducts = myFilter.qs
+	print(allProducts)
 	context = {
 		'allProducts': allProducts,
-		'title': 'My product list',
+		'title': 'My Meme list',
 		'myFilter': myFilter
 	}
 	
-	return render(httprequest, 'meme_list2.html', context)
+	return render(request, 'meme_list2.html', context)
 
 
-'''
 def product_view(request,*args, **kwargs):
 	qs = Meme.objects.all()
 	user = request.user
-	allProducts = Products.objects.all()
+	allProducts = Meme.objects.all()
 
 	context = {
 		'qs': qs,
@@ -83,7 +65,7 @@ def product_view(request,*args, **kwargs):
 		'title': 'My product list'
 	}
 	return render(request, 'meme_list.html', context)
-'''
+	
 def like_product(request):
 	user = request.user
 	if request.method == 'POST':
@@ -105,25 +87,25 @@ def like_product(request):
 		like.save()
 	return redirect('memes:meme-list')
 
-
 def productDetail(request, my_id, *args, **kwargs):
 	oneProduct = get_object_or_404(Meme, id=my_id)
-	#comments = Comment.objects.filter(product=my_id).order_by('-id')
-	#comment_form = CommentForm(request.POST or None)
-	'''if request.method == 'POST':
+	comments = Comment.objects.filter(meme_id=my_id).order_by('-id')
+	print(my_id)
+	comment_form = CommentForm(request.POST or None)
+	if request.method == 'POST':
 		if comment_form.is_valid():
 			content = request.POST.get('content')
-			comment = Comment.objects.create(product=oneProduct, user=request.user, content=content)
+			comment = Comment.objects.create(meme=oneProduct, user=request.user, content=content)
 			comment.save()
 
 			return HttpResponseRedirect(oneProduct.get_absolute_url())
 		else:
-			comment_form = CommentForm()'''
+			comment_form = CommentForm()
 	context = {
 	'meme' : oneProduct,
 	'title' : 'Product Details',
-	#'comments' : comments,
-	#'comment_form' : comment_form,
+	'comments' : comments,
+	'comment_form' : comment_form,
 	}
 
 	return render(request,'meme_detail.html', context)
