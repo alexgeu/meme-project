@@ -24,7 +24,7 @@ class ProductCreateForm(forms.ModelForm):
 class MemeForm(forms.ModelForm):
 	class Meta:
 		model = Meme
-		fields = ('title', 'caption', 'image')
+		fields = ('title', 'caption', 'image', 'category')
 
 class CommentForm(forms.ModelForm):
 	class Meta:
