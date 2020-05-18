@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #my own apps
     'register',
     'django_filters',
+    'bootstrapform',
 
     #myApps
     'myFirstApp',

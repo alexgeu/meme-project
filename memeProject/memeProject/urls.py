@@ -30,7 +30,8 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
-from myFirstApp.views import productDetail, search_meme
+from myFirstApp.views import productDetail
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,8 +39,8 @@ urlpatterns = [
     path('WelcomeClass/', HomeViewClass.as_view()),
     #path('create/', productCreateView, name=''),
     #path('products/<int:my_id>', productDetail, name='product-detail'),
-    #path('products/', include('myFirstApp.urls', namespace='products')),
-    path('search/', search_meme),
+    #path('products/', include('myFirstApp.urls', namespace='memes')),
+    path('search/', get_context_data, name='search'),
     path('', include('myFirstApp.urls', namespace='memes')),
     path('upload/', upload, name='upload'),
     path('memes/upload/', upload_meme, name='upload_meme'),
@@ -50,6 +51,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('profile/', register_views.profile, name='profile'),
     # path('', include('django.contrib.auth.urls')),
+    path('searching', get_context_data)
 ]
 
 if settings.DEBUG:

@@ -11,8 +11,8 @@ class RawProductForm(forms.Form):
 	
 class ProductCreateForm(forms.ModelForm):
 	class Meta:
-		model = Products
-		fields = ['title', 'description', 'price',]
+		model = Meme
+		fields = ['title',]
 	
 
 	def clean_title(self, *args, **kwargs):

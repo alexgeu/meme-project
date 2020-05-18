@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-class Post(models.Model):
+'''class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
@@ -21,7 +21,7 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     summary = models.TextField(default=True)
     #liked = models.ManyToManyField(User, default=None, blank=True, related_name='liked')
-    
+    '''
     
     #def get_absolute_url(self):
         #return reverse('product-detail', kwargs={'my_id' : self.id})
@@ -29,21 +29,19 @@ class Products(models.Model):
 
     # def get_api_url(self):
     #     return reverse("posts-api:detail", kwargs={"slug": self.slug})
-    def __str__(self):
-        return str(self.title)
+    
+'''
+def get_like_url(self):
+    return reverse("like-toggle", kwargs={"my_id": self.id})
+
+def get_api_like_url(self):
+    return reverse("posts-like-api-toggle", kwargs={"my_id": self.id})
+
+@property
+def num_likes(self):
+    return self.liked.all().count
     '''
-    def get_like_url(self):
-        return reverse("like-toggle", kwargs={"my_id": self.id})
-
-    def get_api_like_url(self):
-        return reverse("posts-like-api-toggle", kwargs={"my_id": self.id})
-
-    @property
-    def num_likes(self):
-        return self.liked.all().count
-        '''
-
-
+    
 class Meme(models.Model):
     title = models.CharField(max_length=100)
     caption = models.TextField(max_length=500)
@@ -53,7 +51,7 @@ class Meme(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('meme-detail', kwargs={'my_id' : self.id})
+        return reverse('memes:meme-detail', kwargs={'my_id' : self.id})
         
     def __str__(self):
         return str(self.title)

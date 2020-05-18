@@ -1,7 +1,6 @@
-from .models import Products, Comment, Like, LIKE_CHOICES
+from .models import Comment, Like, LIKE_CHOICES, Meme
 from .forms import RawProductForm, ProductCreateForm, MemeForm
 from django.views.generic import ListView, TemplateView, RedirectView
-from .models import Post
 from django.core.files.storage import FileSystemStorage
 from .forms import *
 from .filters import OrderFilter
@@ -35,12 +34,11 @@ def productCreateView(httprequest, *args, **kwargs):
 	}
 	return render(httprequest, 'product_create_view.html', context)
 '''
-
-def search_meme(request, *args, **kwargs):
+'''
+def search(request, *args, **kwargs):
 	allProducts = Meme.objects.all()
 	print(allProducts)
-	memes = allProducts.all()
-	myFilter = OrderFilter(request.GET, queryset=memes)
+	myFilter = OrderFilter(request.GET, queryset=allProducts)
 	print(myFilter)
 	allProducts = myFilter.qs
 	print(allProducts)
@@ -51,8 +49,24 @@ def search_meme(request, *args, **kwargs):
 	}
 	
 	return render(request, 'meme_list2.html', context)
+'''
 
+def get_context_data(request, *args, **kwargs):
+	allmemes = Meme.objects.all()
+	print('first allproducts are', allmemes)
+	myFilter = OrderFilter(request.GET, queryset=allmemes)
+	print('myfilter is', myFilter)
+	allmemes = myFilter.qs
+	print('output are', allmemes)
+	context = {
+		'allmemes': allmemes,
+		'title': 'My Meme list',
+		'myFilter': myFilter,
+	}
+	
+	return render(request, 'meme_list2.html', context)
 
+#I think this is also unecessary?
 def product_view(request,*args, **kwargs):
 	qs = Meme.objects.all()
 	user = request.user
@@ -66,7 +80,7 @@ def product_view(request,*args, **kwargs):
 	}
 	return render(request, 'meme_list.html', context)
 	
-def like_product(request):
+def like_meme(request):
 	user = request.user
 	if request.method == 'POST':
 		meme_id = request.POST.get('meme_id')
@@ -87,6 +101,7 @@ def like_product(request):
 		like.save()
 	return redirect('memes:meme-list')
 
+#this should be renamed to memeDetail
 def productDetail(request, my_id, *args, **kwargs):
 	oneProduct = get_object_or_404(Meme, id=my_id)
 	comments = Comment.objects.filter(meme_id=my_id).order_by('-id')
@@ -119,7 +134,6 @@ def upload(request):
 		context ['url'] = fs.url(name)
 	return render(request, 'upload.html', context)
 
-#checked
 def meme_list(request):
 	memes = Meme.objects.all()
 	print(memes)
@@ -127,8 +141,7 @@ def meme_list(request):
 		'memes': memes
 	})
 
-#checked
-def productList(httprequest, *args, **kwargs):
+'''def productList(httprequest, *args, **kwargs):
 	allProducts = Products.objects.all()
 	print(allProducts)
 	context = {
@@ -137,7 +150,7 @@ def productList(httprequest, *args, **kwargs):
 	}
 	
 	return render(httprequest, 'product_list.html', context)
-
+'''
 
 def upload_meme(request):
 	if request.method == 'POST':

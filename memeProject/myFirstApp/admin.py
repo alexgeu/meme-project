@@ -8,8 +8,7 @@ from .models import Meme
 #admin.site.register(Products)
 #admin.site.register (Post)
 admin.site.register (Meme)
-from .models import Products,Like, Comment
+from .models import Like, Comment
 
-admin.site.register(Products)
 admin.site.register(Like)
 admin.site.register(Comment)
