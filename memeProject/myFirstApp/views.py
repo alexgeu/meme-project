@@ -53,11 +53,8 @@ def search(request, *args, **kwargs):
 
 def get_context_data(request, *args, **kwargs):
 	allmemes = Meme.objects.all()
-	print('first allproducts are', allmemes)
 	myFilter = OrderFilter(request.GET, queryset=allmemes)
-	print('myfilter is', myFilter)
 	allmemes = myFilter.qs
-	print('output are', allmemes)
 	context = {
 		'allmemes': allmemes,
 		'title': 'My Meme list',
