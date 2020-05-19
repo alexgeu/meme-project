@@ -14,7 +14,6 @@
     <h3><a href=/memes/{{meme.id}}>{{ meme.title }} </a>
                 </h3>
 
-                <h3><p>{{ meme.title }}</p></h3>
                 <p>{{ meme.timestamp }} </p>
                 <p>
                     {% if meme.image %}
@@ -32,7 +31,6 @@
                       </form>
                       <strong>{{ meme.liked.all.count }} likes</strong>
                 </p>
-            <p>{{ meme.caption }}</p>
 
                 <p>{{ meme.caption }}</p>
                 <p>{{ meme.category }}</p>
