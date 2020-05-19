@@ -4,7 +4,6 @@ from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-
 # Create your models here.
 '''class Post(models.Model):
     title = models.CharField(max_length=100)
@@ -35,12 +34,21 @@ def get_like_url(self):
     return reverse("like-toggle", kwargs={"my_id": self.id})
 
 def get_api_like_url(self):
-    return reverse("posts-like-api-toggle", kwargs={"my_id": self.id})
+    return reverse("posts-like-api-toggle", kwargs={"my_id": self.id})'''
+
+CATEGORY_CHOICES=[
+	('New', 'New'),
+	('Nerd', 'Nerd'),
+	('Quotes', 'Quotes'),
+	('Programming', 'Programming'),
+	('Daily struggle', 'Daily Struggle'),
+]
+
 
 @property
 def num_likes(self):
     return self.liked.all().count
-    '''
+
     
 class Meme(models.Model):
     title = models.CharField(max_length=100)
@@ -49,6 +57,8 @@ class Meme(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     liked = models.ManyToManyField(User, default=None, blank=True, related_name='liked')
 
+    category = models.CharField(max_length=15, choices=CATEGORY_CHOICES, default='No category chosen')
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
         return reverse('memes:meme-detail', kwargs={'my_id' : self.id})

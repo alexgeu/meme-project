@@ -3,7 +3,6 @@
 {% block mainContent %}
 
     <h2>Memes</h2>
-
     <p>
         <a href="{% url 'upload_meme' %}" class="btn btn-primary">Upload Meme</a>
     </p>
@@ -15,6 +14,8 @@
     <h3><a href=/memes/{{meme.id}}>{{ meme.title }} </a>
                 </h3>
 
+                <h3><p>{{ meme.title }}</p></h3>
+                <p>{{ meme.timestamp }} </p>
                 <p>
                     {% if meme.image %}
                         <img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
@@ -32,6 +33,10 @@
                       <strong>{{ meme.liked.all.count }} likes</strong>
                 </p>
             <p>{{ meme.caption }}</p>
+
+                <p>{{ meme.caption }}</p>
+                <p>{{ meme.category }}</p>
+            </p>
 
             {% endfor %}
 
