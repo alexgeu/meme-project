@@ -1,39 +1,66 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block mainContent %}
-<h1>{{ title }}</h1>
 <br>
-<h2>{{ meme.title }}</h2>
+<h2>{{ meme.title }} - {{ title }}</h2>
 <br>
+<div class="jumbotron">
+    <div class="card" style="width: 40rem;">
+        <div class="card-header">
+            <h2><a href=/memes/{{meme.id}}>{{ meme.title }}</a></h2>
+            {{ meme.timestamp }}
+        </div>
+        {% if meme.image %}
+        <img class="card-img-top" src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
+        {% endif %}
 
-<img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
-<br>
-<h5>{{meme.caption}}</h5>
-<br>
-<strong>{{ meme.liked.all.count }} likes</strong>
-
-<form method="post">
-    {% csrf_token %}
-    {{ comment_form.as_p }}
-    {% if request.user.is_authenticated %}
-        <input type="submit" value="Submit" class="btn btn-outline-success">
-    {% else %}
-        <input type="submit" value="Submit" class="btn btn-outline-success" disabled>
-    {% endif %}
-
-</form>
-<br>
-<br>
-
-<div class="main-comment-section">
-    {{ comments.count }} Comments {{ comments|pluralize }}
-    {% for comment in comments %}
-
-        <blockquote class="blockquote">
-          <p class="mb-0">{{ comment.content }} </p>
-          <footer class="blockquote-footer">by {{ comment.user|capfirst}}</footer>
-
-        </blockquote>
-    {% endfor %}
+        <div class="card-body">
+            <h5 class="card-title">{{ meme.caption }}</h5>
+            <p class="card-text">#{{ meme.category }}</p>
+            {% if user.is_authenticated %}
+                <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
+                {% csrf_token %}
+                <input type="hidden" name="meme_id" value="{{meme.id}}">
+                    {% if user not in meme.liked.all %}
+                        <button class="btn btn-dark" type="submit">Like</button>
+                    {% else %}
+                        <button class="btn btn-light" type="submit">Unlike</button>
+                    {% endif %}
+                </form>
+                <br>
+            {% else %}
+                <!-- Do not show the like button - user is not authenticated -->
+            {% endif %}
+            <p><strong>{{ meme.liked.all.count }} likes</strong></p>
+            <hr>
+            {% if user.is_authenticated %}
+                <h3>Please submit a comment below:</h3>
+                <br>
+                <form method="post" class="form-group">
+                    {% csrf_token %}
+                    {{ comment_form|crispy }}
+                    {% if request.user.is_authenticated %}
+                        <input type="submit" value="Submit" class="btn btn-outline-success">
+                    {% else %}
+                        <input type="submit" value="Submit" class="btn btn-outline-success" disabled>
+                    {% endif %}
+                </form>
+                <br>
+                <hr>
+            {% else %}
+                <!-- Do not show the like button - user is not authenticated -->
+            {% endif %}
+            <br>
+            <div class="main-comment-section">
+                {{ comments.count }} Comments {{ comments|pluralize }}
+                {% for comment in comments %}
+                    <blockquote class="blockquote">
+                    <p class="mb-0">{{ comment.content }} </p>
+                    <footer class="blockquote-footer">by {{ comment.user|capfirst}}</footer>
+                    </blockquote>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

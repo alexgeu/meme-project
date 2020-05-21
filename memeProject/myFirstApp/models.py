@@ -93,3 +93,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return '{}-{}'.format(self.meme.title, str(self.user.username))
+

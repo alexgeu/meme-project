@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block mainContent %}
+    <br>
     <h2>Upload Meme</h2>
+    <hr>
+    <br>
     <form method="post" action ="" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
             <script>
             function allowDrop(ev)

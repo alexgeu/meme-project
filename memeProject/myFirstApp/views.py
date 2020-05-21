@@ -115,7 +115,7 @@ def productDetail(request, my_id, *args, **kwargs):
 			comment_form = CommentForm()
 	context = {
 	'meme' : oneProduct,
-	'title' : 'Product Details',
+	'title' : 'Meme Detail View',
 	'comments' : comments,
 	'comment_form' : comment_form,
 	}

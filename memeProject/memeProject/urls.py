@@ -25,6 +25,7 @@ from myViewSample.views import home
 from myViewSample.views import HomeViewClass
 from django.views.generic import TemplateView
 from myFirstApp.views import *
+#from myFirstApp.views import productList, productCreateView, productDetail, search
 from django.urls import include
 from django.contrib.auth import views as auth_views
 from django.conf import settings

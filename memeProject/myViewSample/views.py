@@ -33,7 +33,7 @@ def home(httprequest, *args):
 		'year' : 1992,
 		'myList' : ['this', 'is', 'my', 'list', 'hello']
 	}
-	return render(httprequest, 'home.html',my_dict)
+	return render(httprequest, 'home.html', my_dict)
 
 
 
