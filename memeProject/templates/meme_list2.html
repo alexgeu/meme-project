@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block searchContent %}
+<form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+
+<div>
+
+            {% for meme in allmemes %}
+            <p>
+            <h3><a href=/memes/{{meme.id}}>{{ meme.title }} </a>
+                </h3>
+
+                <p>
+                    {% if meme.image %}
+                        <img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
+                    {% endif %}
+                </p>
+                <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
+                      {% csrf_token %}
+                          <input type="hidden" name="meme_id" value="{{meme.id}}">
+                          {% if user not in meme.liked.all %}
+                                <button class="ui button positive" type="submit">Like</button>
+                          {% else %}
+                                <button class="ui button negative" type="submit">Unlike</button>
+                          {% endif %}
+                      </form>
+                      <strong>{{ meme.liked.all.count }} likes</strong>
+                </p>
+            <p>{{ meme.caption }}</p>
+
+            {% endfor %}
+
+</div>
+{% endblock %}
