@@ -2,83 +2,50 @@
 
 {% block mainContent %}
 
-    <h2>Memes</h2>
-    <p>
-        <a href="{% url 'upload_meme' %}" class="btn btn-primary">Upload Meme</a>
-    </p>
-
-
+<br>
+<h2>Welcome to ThreeSquareGag - Meme feed</h2>
+<br>
+{% if user.is_authenticated %}
+<p><a href="{% url 'upload_meme' %}" class="btn btn-dark">Upload new meme</a></p>
+{% else %}
+<!-- Do not show any upload button for unauthenticated users -->
+<div class="alert alert-success" role="alert">
+  In case you want to like or comment our memes, please <a href="{% url 'login' %}">login</a> or create an <a href="{% url 'register' %}">account</a>.
+</div>
+{% endif %}
+<br>
+{% for meme in memes %}
 <div class="jumbotron">
-            {% for meme in memes %}
-            <p>
-    <h3><a href=/memes/{{meme.id}}>{{ meme.title }} </a>
-                </h3>
-
-                <p>{{ meme.timestamp }} </p>
-                <p>
-                    {% if meme.image %}
-                        <img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
-                    {% endif %}
-                </p>
-                <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
-                      {% csrf_token %}
-                          <input type="hidden" name="meme_id" value="{{meme.id}}">
-                          {% if user not in meme.liked.all %}
-                                <button class="ui button positive" type="submit">Like</button>
-                          {% else %}
-                                <button class="ui button negative" type="submit">Unlike</button>
-                          {% endif %}
-                      </form>
-                      <strong>{{ meme.liked.all.count }} likes</strong>
-                </p>
-
-                <p>{{ meme.caption }}</p>
-                <p>{{ meme.category }}</p>
-            </p>
-
-            {% endfor %}
-
-</div>
-
-{% endblock %}
-
-<h1>{{ 'LATEST MEMES' }}</h1
-
-
-<!--
-
- <h1>{{ 'LATEST MEMES' }}</h1
-
-
-
-{%block content2%}
-
-<div class="row row-cols-1 row-cols-md-5">
-    {% for obj in allProducts %}
-    <div class="col mb-4">
-        <div class="card">
-          <img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><a href=/products/{{obj.id}}>{{obj.title }} </a>({{ obj.price }})</h5>
-              <form action="{% url 'products:like-product'%}" method="POST" class=" ui form">
-              {% csrf_token %}
-                  <input type="hidden" name="product_id" value="{{obj.id}}">
-                  {% if user not in obj.liked.all %}
-                        <button class="ui button positive" type="submit">Like</button>
-                  {% else %}
-                        <button class="ui button negative" type="submit">Unlike</button>
-                  {% endif %}
-              </form>
-              <strong>{{ obj.liked.all.count }} likes</strong>
-            <p class="card-text">{{obj.summary }}</p>
-          </div>
+    <div class="card" style="width: 40rem;">
+        <div class="card-header">
+            <h2><a href=/memes/{{meme.id}}>{{ meme.title }}</a></h2>
+            {{ meme.timestamp }}
         </div>
+        {% if meme.image %}
+        <img class="card-img-top" src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ meme.caption }}</h5>
+            <p class="card-text">#{{ meme.category }}</p>
+            {% if user.is_authenticated %}
+                <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
+                {% csrf_token %}
+                <input type="hidden" name="meme_id" value="{{meme.id}}">
+                    {% if user not in meme.liked.all %}
+                        <button class="btn btn-dark" type="submit">Like</button>
+                    {% else %}
+                        <button class="btn btn-light" type="submit">Unlike</button>
 
-
-
-    {% endfor%}
+                    {% endif %}
+                </form>
+                <br>
+            {% else %}
+                    <!-- Do not show the like button - user is not authenticated -->
+            {% endif %}
+            <p><strong>{{ meme.liked.all.count }} likes</strong></p>
+        </div>
+    </div>
 </div>
+{% endfor %}
 
 {% endblock %}
-
--->
