@@ -17,7 +17,7 @@ from django.contrib.auth import logout
 #from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView
 
-
+from django.core.paginator import Paginator
 
 def home(request):
     return render(request, 'home.html')
@@ -133,9 +133,14 @@ def upload(request):
 
 def meme_list(request):
 	memes = Meme.objects.all()
+	paginator = Paginator(memes, 2)  # Show 1 meme per page.
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
 	print(memes)
 	return render(request, 'meme_list.html', {
-		'memes': memes
+		# disable meme context due to pagination
+		# 'memes': memes,
+		'page_obj': page_obj,
 	})
 
 '''def productList(httprequest, *args, **kwargs):
