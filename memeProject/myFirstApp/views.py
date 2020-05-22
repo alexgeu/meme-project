@@ -133,12 +133,13 @@ def upload(request):
 
 def meme_list(request):
 	memes = Meme.objects.all()
-	paginator = Paginator(memes, 1)  # Show 1 meme per page.
+	paginator = Paginator(memes, 2)  # Show 1 meme per page.
 	page_number = request.GET.get('page')
 	page_obj = paginator.get_page(page_number)
 	print(memes)
 	return render(request, 'meme_list.html', {
-		#'memes': memes,
+		# disable meme context due to pagination
+		# 'memes': memes,
 		'page_obj': page_obj,
 	})
 
