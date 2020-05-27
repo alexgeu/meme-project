@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block mainContent %}
+
+    {% for meme in programming_list %}
+<div class="jumbotron">
+    <div class="card" style="width: 40rem;">
+        <div class="card-header">
+            <h2><a href=/memes/{{meme.id}}>{{ meme.title }}</a></h2>
+            {{ meme.timestamp }}
+        </div>
+        {% if meme.image %}
+        <img class="card-img-top" src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ meme.caption }}</h5>
+            <p class="card-text">#{{ meme.category }}</p>
+            {% if user.is_authenticated %}
+                <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
+                {% csrf_token %}
+                <input type="hidden" name="meme_id" value="{{meme.id}}">
+                    {% if user not in meme.liked.all %}
+                        <button class="btn btn-dark" type="submit">Like</button>
+                    {% else %}
+                        <button class="btn btn-light" type="submit">Unlike</button>
+
+                    {% endif %}
+                </form>
+                <br>
+            {% else %}
+                    <!-- Do not show the like button - user is not authenticated -->
+            {% endif %}
+            <p><strong>{{ meme.liked.all.count }} likes</strong></p>
+        </div>
+    </div>
+</div>
+
+    {% endfor %}
+
+
+{% endblock %}
