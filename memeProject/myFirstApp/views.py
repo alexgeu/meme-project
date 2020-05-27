@@ -105,12 +105,13 @@ def count_likes(request):
 	}
 	return render(request, 'count_likes.html', context)
 
+def count_comments(request):
+	context = {
+		'commentcount_list': Meme.objects.annotate(the_count=Count('comment')).order_by('-the_count')[:10]
+	}
+	return render(request, 'count_comments.html', context)
 
-	#queryset = Meme.objects.order_by('num_likes')
-	#context = {
-	#	'likecount_list': queryset
-	#}
-	#return render(request, 'count_likes.html', context)
+
 
 #this should be renamed to memeDetail
 def productDetail(request, my_id, *args, **kwargs):

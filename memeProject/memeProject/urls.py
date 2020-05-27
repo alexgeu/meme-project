@@ -57,7 +57,8 @@ urlpatterns = [
     path('category/dailystruggle/', cat_dailystruggle),
     path('category/programming/', cat_programming),
     path('category/quotes/', cat_quotes),
-    path('mostliked/', count_likes)
+    path('mostliked/', count_likes),
+    path('mostcommented', count_comments)
 ]
 
 if settings.DEBUG:
