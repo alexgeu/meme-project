@@ -5,7 +5,7 @@ from django.core.files.storage import FileSystemStorage
 from .forms import *
 from .filters import OrderFilter
 from .models import Meme
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.http import HttpResponse, HttpResponseRedirect, Http404, request
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -98,6 +98,19 @@ def like_meme(request):
 				like.value = 'Like'
 		like.save()
 	return redirect('memes:meme-list')
+
+def count_likes(request):
+	context ={
+		'likecount_list': Meme.objects.annotate(the_count=Count('liked')).order_by('-the_count')[:10]
+	}
+	return render(request, 'count_likes.html', context)
+
+
+	#queryset = Meme.objects.order_by('num_likes')
+	#context = {
+	#	'likecount_list': queryset
+	#}
+	#return render(request, 'count_likes.html', context)
 
 #this should be renamed to memeDetail
 def productDetail(request, my_id, *args, **kwargs):

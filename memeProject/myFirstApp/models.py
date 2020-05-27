@@ -84,6 +84,7 @@ class Like(models.Model):
     @property
     def num_likes(self):
         return self.liked.all().count
+
     
 class Comment(models.Model):
     meme = models.ForeignKey(Meme, on_delete=models.CASCADE)
