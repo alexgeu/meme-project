@@ -4,6 +4,7 @@ from django.views.generic import ListView, TemplateView, RedirectView
 from django.core.files.storage import FileSystemStorage
 from .forms import *
 from .filters import OrderFilter
+from .models import Meme
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404, request
 from django.utils import timezone
@@ -142,6 +143,34 @@ def meme_list(request):
 		# 'memes': memes,
 		'page_obj': page_obj,
 	})
+
+def cat_nerd(request):
+	queryset = Meme.objects.filter(category = 'Nerd')
+	context={
+		'nerd_list':queryset
+	}
+	return render(request, 'category_nerd.html', context)
+
+def cat_dailystruggle(request):
+	queryset = Meme.objects.filter(category = 'Daily struggle')
+	context={
+		'dailystruggle_list': queryset
+	}
+	return render(request, 'category_dailystruggle.html', context)
+
+def cat_programming(request):
+	queryset = Meme.objects.filter(category = 'Programming')
+	context={
+		'programming_list': queryset
+	}
+	return render(request, 'category_programming.html', context)
+
+def cat_quotes(request):
+	queryset = Meme.objects.filter(category = 'Quotes')
+	context={
+		'quotes_list': queryset
+	}
+	return render(request, 'category_quotes.html', context)
 
 '''def productList(httprequest, *args, **kwargs):
 	allProducts = Products.objects.all()

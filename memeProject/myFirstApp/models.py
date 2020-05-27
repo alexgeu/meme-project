@@ -11,6 +11,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     image = models.ImageField(default='default.jpg', upload_to='images/', blank = True)
 
+
     def __str__(self):
         return self.title
         

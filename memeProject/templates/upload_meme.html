@@ -6,29 +6,11 @@
     <h2>Upload Meme</h2>
     <hr>
     <br>
-    <form method="post" action ="" enctype="multipart/form-data">
+    <form method="post" action ="" enctype="multipart/form-data" >
         {% csrf_token %}
         {{ form|crispy }}
-        <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <script>
-            function allowDrop(ev)
-            {
-                ev.preventDefault();
-            }
 
-            function drag(ev)
-            {
-                ev.dataTransfer.setData("text", ev.target.id);
-            }
-
-            function drop(ev)
-            {
-                ev.preventDefault();
-                var data = ev.dataTransfer.getData("text");
-                ev.target.appendChild(document.getElementById(data));
-            }
-            </script>
-        </div>
         <button type="submit" class="btn btn-primary">Upload Meme</button>
     </form>
+
 {% endblock %}
