@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block searchContent %}
+{% block searchContent2 %}
 <form method="get">
-				{{myFilter.form}}
+				{{myFilter2.form}}
 
 		    <button class="btn btn-primary" type="submit">Search</button>
     </form>
@@ -21,7 +21,7 @@
                     {% endif %}
                 </p>
                 <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
-                      {% csrf_token %}
+                      {% csrf_token %}2
                           <input type="hidden" name="meme_id" value="{{meme.id}}">
                           {% if user not in meme.liked.all %}
                                 <button class="ui button positive" type="submit">Like</button>
