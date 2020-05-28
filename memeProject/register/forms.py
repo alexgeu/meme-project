@@ -6,6 +6,9 @@ from .models import Profile
 
 
 class RegisterForm(UserCreationForm):
+    """
+    Registerform let us create a new user
+    """
     email = forms.EmailField()
 
     class Meta:
