@@ -21,7 +21,7 @@
                     {% endif %}
                 </p>
                 <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
-                      {% csrf_token %}2
+                      {% csrf_token %}
                           <input type="hidden" name="meme_id" value="{{meme.id}}">
                           {% if user not in meme.liked.all %}
                                 <button class="ui button positive" type="submit">Like</button>

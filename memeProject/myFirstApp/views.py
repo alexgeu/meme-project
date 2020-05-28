@@ -3,7 +3,7 @@ from .forms import RawProductForm, ProductCreateForm, MemeForm
 from django.views.generic import ListView, TemplateView, RedirectView
 from django.core.files.storage import FileSystemStorage
 from .forms import *
-from .filters import OrderFilter, OrderFilter_navbar
+from .filters import OrderFilter
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404, request
 from django.utils import timezone
@@ -100,13 +100,6 @@ def like_meme(request):
 				like.value = 'Like'
 		like.save()
 	return redirect('memes:meme-list')
-
-
-
-
-
-
-
 
 
 

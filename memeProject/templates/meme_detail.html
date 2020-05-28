@@ -45,19 +45,14 @@
                         <input type="submit" value="Submit" class="btn btn-outline-success" disabled>
                     {% endif %}
                 </form>
-                {% if comment.id == 32 %}
-                    {{ data_external }}
-                    <input type="submit" value="Execute External Python Script">
-                    <br>
-                    <hr>
-                {% endif %}
+
 
             {% else %}
                 <!-- Do not show the like button - user is not authenticated -->
             {% endif %}
             <br>
             <div class="main-comment-section">
-                {{ comments.count }} Comments {{ comments|pluralize }}
+                {{ comments.count }} Comments
                 {% for comment in comments %}
 
                     <blockquote class="blockquote">
