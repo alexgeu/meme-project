@@ -26,6 +26,9 @@ Following features are included:
 * Different templates
 * Bootstrap styling
 
+The web app comes with pre-uploaded memes in order to see all features in action at first sight.
+The uploaded memes are taken from: < fill in the source >
+
 ## Installation guide
 
 This setup is going to guide you through the first time setup of this project.
