@@ -6,7 +6,6 @@
 <h2>Welcome to ThreeSquareGag - Meme feed</h2>
 <br>
 {% if user.is_authenticated %}
-<p><a href="{% url 'upload_meme' %}" class="btn btn-dark">Upload new meme</a></p>
 {% else %}
 <!-- Do not show any upload button for unauthenticated users -->
 <div class="alert alert-success" role="alert">
