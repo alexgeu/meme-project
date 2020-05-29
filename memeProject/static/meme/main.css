@@ -91,3 +91,8 @@ a.article-title:hover {
 .nav-padding {
   padding-left: 8px;
 }
+
+.pagination {
+  padding-bottom: 30px !important;
+}
+

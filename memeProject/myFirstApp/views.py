@@ -4,7 +4,8 @@ from django.views.generic import ListView, TemplateView, RedirectView
 from django.core.files.storage import FileSystemStorage
 from .forms import *
 from .filters import OrderFilter
-from django.db.models import Q
+from .models import Meme
+from django.db.models import Q, Count
 from django.http import HttpResponse, HttpResponseRedirect, Http404, request
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -17,8 +18,13 @@ from django.contrib.auth import logout
 #from django.contrib.auth import login, authenticate, logout
 #from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView
+<<<<<<< HEAD
 from register import models
 
+=======
+
+from django.core.paginator import Paginator
+>>>>>>> bce9151fd2275e7660150c346e98746f94a73687
 
 def home(request):
     return render(request, 'home.html')
@@ -101,7 +107,17 @@ def like_meme(request):
 		like.save()
 	return redirect('memes:meme-list')
 
+def count_likes(request):
+	context ={
+		'likecount_list': Meme.objects.annotate(the_count=Count('liked')).order_by('-the_count')[:10]
+	}
+	return render(request, 'count_likes.html', context)
 
+def count_comments(request):
+	context = {
+		'commentcount_list': Meme.objects.annotate(the_count=Count('comment')).order_by('-the_count')[:10]
+	}
+	return render(request, 'count_comments.html', context)
 
 #this should be renamed to memeDetail
 def productDetail(request, my_id, *args, **kwargs):
@@ -141,10 +157,43 @@ def upload(request):
 
 def meme_list(request):
 	memes = Meme.objects.all()
+	paginator = Paginator(memes, 2)  # Show 1 meme per page.
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
 	print(memes)
 	return render(request, 'meme_list.html', {
-		'memes': memes
+		# disable meme context due to pagination
+		# 'memes': memes,
+		'page_obj': page_obj,
 	})
+
+def cat_nerd(request):
+	queryset = Meme.objects.filter(category = 'Nerd')
+	context={
+		'nerd_list':queryset
+	}
+	return render(request, 'category_nerd.html', context)
+
+def cat_dailystruggle(request):
+	queryset = Meme.objects.filter(category = 'Daily struggle')
+	context={
+		'dailystruggle_list': queryset
+	}
+	return render(request, 'category_dailystruggle.html', context)
+
+def cat_programming(request):
+	queryset = Meme.objects.filter(category = 'Programming')
+	context={
+		'programming_list': queryset
+	}
+	return render(request, 'category_programming.html', context)
+
+def cat_quotes(request):
+	queryset = Meme.objects.filter(category = 'Quotes')
+	context={
+		'quotes_list': queryset
+	}
+	return render(request, 'category_quotes.html', context)
 
 '''def productList(httprequest, *args, **kwargs):
 	allProducts = Products.objects.all()
