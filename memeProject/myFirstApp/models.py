@@ -65,6 +65,9 @@ class Meme(models.Model):
 
     def get_absolute_url(self):
         return reverse('memes:meme-detail', kwargs={'my_id' : self.id})
+
+    class Meta:
+        ordering = ['-timestamp']
         
     def __str__(self):
         return str(self.title)

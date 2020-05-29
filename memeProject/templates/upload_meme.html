@@ -6,10 +6,9 @@
     <h2>Upload Meme</h2>
     <hr>
     <br>
-    <form method="post" action ="" enctype="multipart/form-data" >
+    <form method="post" action ="" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
-
         <button type="submit" class="btn btn-primary">Upload Meme</button>
     </form>
 
