@@ -9,6 +9,9 @@ from django.views.generic import View, TemplateView
 
 # Create your views here.
 def register(request):
+    """
+    Register function calls RegisterForm, validates the form and returns the register.html template
+    """
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -24,6 +27,9 @@ def register(request):
 # Decorator to check if user is logged in
 @login_required
 def profile(request):
+    """
+    Profile function calls UserUpdateForm and ProfileUpdateForm, validates the form and return the profile.html template
+    """
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
