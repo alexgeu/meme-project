@@ -18,13 +18,8 @@ from django.contrib.auth import logout
 #from django.contrib.auth import login, authenticate, logout
 #from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView
-<<<<<<< HEAD
 from register import models
-
-=======
-
 from django.core.paginator import Paginator
->>>>>>> bce9151fd2275e7660150c346e98746f94a73687
 
 def home(request):
     return render(request, 'home.html')

@@ -2,52 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/2_GeDHfOZ.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/2_K2VO0SK.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Another_Meme_zYHBtY6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Bildschirmfoto_2020-05-11_um_21.29.28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Bildschirmfoto_2020-05-19_um_14.34.27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Daily_struggle.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Meme-kitchen_CdMVaf7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Meme-kitchen_QJ45MCm.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Meme-kitchen_y36kFyG.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Meme_Alman_0kvmZaP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Programmer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Programming2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/Programming_SChach.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/innovationgraphic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/media/media/meme_images/innovationgraphic_hpRnpMo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0002_meme_category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0003_auto_20200517_1523.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/myFirstApp/migrations/0004_auto_20200524_0930.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/templates/category_dailystruggle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/templates/category_nerd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/templates/category_programming.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/templates/category_quotes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/templates/count_comments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memeProject/templates/count_likes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/meme-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/meme-project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/memeProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/memeProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/register/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/register/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/registration/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/registration/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/templates/users/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/register/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/register/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/static/meme/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/static/meme/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/final_nav_bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/final_nav_bar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/meme_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/meme_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeProject/templates/upload_meme.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/upload_meme.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memeProject/myFirstApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="994">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="271">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -139,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memeProject/static/meme/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="380">
+              <caret line="76" column="25" lean-forward="true" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -189,8 +144,8 @@
         <option value="$PROJECT_DIR$/memeProject/register/apps.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/memeProject/memeProject/urls.py" />
-        <option value="$PROJECT_DIR$/memeProject/myFirstApp/views.py" />
         <option value="$PROJECT_DIR$/memeProject/static/meme/main.css" />
+        <option value="$PROJECT_DIR$/memeProject/myFirstApp/views.py" />
       </list>
     </option>
   </component>
@@ -561,16 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeProject/myFirstApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="994">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/memeProject/templates/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -580,8 +525,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/memeProject/static/meme/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="380">
+          <caret line="76" column="25" lean-forward="true" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeProject/myFirstApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
