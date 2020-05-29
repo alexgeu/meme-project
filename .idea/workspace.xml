@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8208c8d-4eb6-4cdb-8e46-4c269c7f3e4f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/myFirstApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeProject/templates/upload_meme.html" beforeDir="false" afterPath="$PROJECT_DIR$/memeProject/templates/upload_meme.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,20 +125,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>defa</find>
-      <find>detail</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1aUpFnYKDBTrJ9M9yJ7giUCa7BN" />
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -229,20 +227,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -296,6 +281,10 @@
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="761" y="23" width="603" height="448" key="dock-window-1/0.23.1440.825@0.23.1440.825" timestamp="1587640629039" />
+    <state x="246" y="159" width="588" height="538" key="find.popup" timestamp="1590312789513">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="246" y="159" width="588" height="538" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1590312789513" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/memeProject/manage.py">

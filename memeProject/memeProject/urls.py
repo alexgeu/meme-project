@@ -52,7 +52,13 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('profile/', register_views.profile, name='profile'),
     # path('', include('django.contrib.auth.urls')),
-    path('searching', get_context_data)
+    path('searching', get_context_data),
+    path('category/nerd/', cat_nerd),
+    path('category/dailystruggle/', cat_dailystruggle),
+    path('category/programming/', cat_programming),
+    path('category/quotes/', cat_quotes),
+    path('mostliked/', count_likes),
+    path('mostcommented', count_comments)
 ]
 
 if settings.DEBUG:

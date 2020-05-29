@@ -11,6 +11,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     image = models.ImageField(default='default.jpg', upload_to='images/', blank = True)
 
+
     def __str__(self):
         return self.title
         
@@ -64,6 +65,9 @@ class Meme(models.Model):
 
     def get_absolute_url(self):
         return reverse('memes:meme-detail', kwargs={'my_id' : self.id})
+
+    class Meta:
+        ordering = ['-timestamp']
         
     def __str__(self):
         return str(self.title)
@@ -83,6 +87,7 @@ class Like(models.Model):
     @property
     def num_likes(self):
         return self.liked.all().count
+
     
 class Comment(models.Model):
     meme = models.ForeignKey(Meme, on_delete=models.CASCADE)
