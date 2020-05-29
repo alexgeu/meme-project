@@ -92,4 +92,5 @@ python3 manage.py runserver
 meme-project (This folder is where our environment, our readme and our requirements.txt are located)
 
 -> memeProject (This folder is where our manage.py file is located)
+
 --> memeProject (This is where all comes together)
