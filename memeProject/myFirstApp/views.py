@@ -92,15 +92,6 @@ def memeDetail(request, my_id, *args, **kwargs):
 
 	return render(request,'meme_detail.html', context)
 
-def upload(request):
-	context = {}
-	if request.method == 'POST':
-		uploaded_file = request.FILES['document']
-		fs = FileSystemStorage()
-		name = fs.save(uploaded_file.name, uploaded_file)
-		context ['url'] = fs.url(name)
-	return render(request, 'upload.html', context)
-
 def meme_list(request):
 	"""shows all memes, which are currently uploaded to the webpage"""
 	memes = Meme.objects.all()
@@ -147,7 +138,7 @@ def cat_quotes(request):
 	return render(request, 'category_quotes.html', context)
 
 def upload_meme(request):
-	"""uploads and saves a meme"""
+	"""uploads and saves a meme that are then shown in meme_list"""
 	if request.method == 'POST':
 		form = MemeForm(request.POST, request.FILES)
 		if form.is_valid():

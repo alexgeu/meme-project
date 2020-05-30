@@ -27,7 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', get_context_data, name='search'),
     path('', include('myFirstApp.urls', namespace='memes')),
-    path('upload/', upload, name='upload'),
     path('memes/upload/', upload_meme, name='upload_meme'),
     path('memes/<int:my_id>', memeDetail, name='meme-detail'),
     path('memes/', meme_list, name='meme_list'),
@@ -43,6 +42,7 @@ urlpatterns = [
     path('mostcommented', count_comments)
 ]
 
+"""The following commands are needed to upload and store media"""
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
         urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
