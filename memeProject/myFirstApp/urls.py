@@ -17,18 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
-#from .views import HomeViewClass
 from django.views.generic import TemplateView
-from myFirstApp.views import *
 
 app_name = 'memes'
 
 urlpatterns = [
-    #path('', productList),
     path('', meme_list, name='meme-list'),
     path('<int:my_id>', upload_meme, name='upload_meme'),
-    path('memes/<int:my_id>', productDetail, name='meme-detail'),
-    #path('', product_view, name='product-list'),
+    path('memes/<int:my_id>', memeDetail, name='meme-detail'),
     path('like/', like_meme, name='like-meme'),
-
-]
+    ]
