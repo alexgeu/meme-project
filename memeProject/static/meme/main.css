@@ -87,3 +87,12 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+.nav-padding {
+  padding-left: 8px;
+}
+
+.pagination {
+  padding-bottom: 30px !important;
+}
+

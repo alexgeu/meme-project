@@ -5,6 +5,9 @@ from PIL import Image
 # Create your models here.
 
 class Profile(models.Model):
+    """
+    Profile Model saves the user profile including a profile pic to the database
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     # add city or other stuff here
