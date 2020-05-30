@@ -18,7 +18,7 @@ from django.contrib.auth import logout
 #from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView
 from register import models
-
+import os
 
 def home(request):
     return render(request, 'home.html')
@@ -108,7 +108,6 @@ def productDetail(request, my_id, *args, **kwargs):
 	oneProduct = get_object_or_404(Meme, id=my_id)
 	comments = Comment.objects.filter(meme_id=my_id).order_by('-id')
 	comment_form = CommentForm(request.POST or None)
-	
 	if request.method == 'POST':
 		if comment_form.is_valid():
 			content = request.POST.get('content')
