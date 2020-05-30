@@ -19,7 +19,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from register import views as register_views
-from myViewSample.views import home
 from django.views.generic import TemplateView
 from myFirstApp.views import *
 from django.contrib.auth import views as auth_views
