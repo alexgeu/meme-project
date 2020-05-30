@@ -14,12 +14,12 @@ The target is to create a web app that allows users to browse memes and get away
 Memes can be uploaded, liked and commented. The prerequisite to use the like and comment function is a registered user.
 
 Following features are included:
-* Uploading a meme
+* Upload a meme
 * Like a meme
 * Comment a meme
 * Category management
-* Search function
-* Quicklinks (sidebar)
+* Search function (Meme explorer)
+* Quick-links (sidebar)
 * User management including profile
 * Updating of profile
 * Pagination
@@ -35,7 +35,7 @@ This setup is going to guide you through the first time setup of this project.
 
 Required dependencies are:
 
-- Python 3.6
+- Python 3.7.4
 
 After installing python go to the directory where you want your project to be located and clone the github repository by opening your console in the desired folder and running the following command:
 
@@ -53,7 +53,8 @@ To create a virtual environment you run
 
 ```python -m venv env```
 
-For the name of the virtual environment we choose `env`. You just need to remember what it is because the next step is to activate the virtual environment. This step differs between Windows and UNIX systems:
+For the name of the virtual environment we choose `env`.
+Next, we need to activate the virtual environment. This step differs between Windows and UNIX systems:
 
 WINDOWS
 ```
@@ -80,7 +81,7 @@ In this folder we need to setup our database. To do so, we need to run two comma
 1) `python manage.py migrate`
 2) `python manage.py createsuperuser`
 
-The first command creates a database from all our files and the second command creates a user that allows us to navigate our own app
+The first command creates a database from all our files and the second command creates a user that allows us to navigate the app
 
 The last step of the initial setup is to check if everything worked correctly by running
 
