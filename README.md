@@ -1,35 +1,99 @@
 # The ThreeSquareGag - MemeSite
-Django programming project of Sasa, Sophie and Alex.
 
-Project was developed during the Information Systems Development course at the University of Liechtenstein
+## General
+
+This project is being developed for the Information Systems Development course at the University of Liechtenstein
 
 * Project start: 13.03.2020
 * Project end: 04.06.2020 
 
-## Project description
-Our idea was to create a web app that allows to upload memes, like and comment them.
-The prerequisite to use the like and comment function is a registered user.
+The developers are Sasa Malesevic, Sophie Hartl and Alexander Geuze
 
-Following features are available:
-* Uploading a meme
+## Project description
+The target is to create a web app that allows users to browse memes and get away of their daily struggle for a couple of minutes.
+Memes can be uploaded, liked and commented. The prerequisite to use the like and comment function is a registered user.
+
+Following features are included:
+* Upload a meme
 * Like a meme
 * Comment a meme
 * Category management
-* Search function
-* Quicklinks (sidebar)
+* Search function (Meme explorer)
+* Quick-links (sidebar)
 * User management including profile
 * Updating of profile
 * Pagination
 * Different templates
 * Bootstrap styling
 
-## Get up an running
+The web app comes with pre-uploaded memes in order to see all features in action at first sight.
 
-- Clone project from GitHub
-- Install all libraries including their dependencies from the restored requirements.txt file
-	- Run following command in the meme-project folder: "pip install -r requirements.txt"
-	- More information: https://gist.github.com/bradmontgomery/d1423d8e94e29e45aed3
-- Navigate into the project folder and activate the virtual environment with command "source bin/activate"
-- Navigate to the project root folder called "memeProject"
-- Start the server with command "python manage.py runserver"
-- Django start screen should pop up.
+## Installation guide
+
+This setup is going to guide you through the first time setup of this project.
+
+Required dependencies are:
+
+- Python 3.7.4
+
+After installing python go to the directory where you want your project to be located and clone the github repository by opening your console in the desired folder and running the following command:
+
+```
+git clone https://github.com/alexgeu/meme-project.git
+```
+
+Now navigate your console into the newly created `meme-project` folder. The next step is to create a virtual environment. To do this, we will use the `venv` package. On Windows this package comes with the python installation. On Linux you might have to run
+
+```
+sudo apt install -y python3-venv
+```
+
+To create a virtual environment you run 
+
+```python -m venv env```
+
+For the name of the virtual environment we choose `env`.
+Next, we need to activate the virtual environment. This step differs between Windows and UNIX systems:
+
+WINDOWS
+```
+env\Scripts\activate.bat
+```
+
+UNIX
+```
+source env/bin/activate
+```
+
+After activating our virtual environment, the next step is to install all the required dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+This commands gets all the packages that are saved in the `requirements.txt` file and installs the versions that are defined there. If at any point you add a package to the project you need to run `pip freeze > requirements.txt` to add the new dependency to the file.
+
+Now that we have all the dependencies setup correctly you can go into the `memeProject` folder. This is the folder where our `manage.py` file is located.
+
+In this folder we need to setup our database. To do so, we need to run two commands:
+
+1) `python manage.py migrate`
+2) `python manage.py createsuperuser`
+
+The first command creates a database from all our files and the second command creates a user that allows us to navigate the app
+
+The last step of the initial setup is to check if everything worked correctly by running
+
+```
+python3 manage.py runserver
+```
+
+## Project structure
+
+### Folder structure
+
+meme-project (This folder is where our environment, our readme and our requirements.txt are located)
+
+-> memeProject (This folder is where our manage.py file is located)
+
+--> memeProject (This is where our apps are located)
