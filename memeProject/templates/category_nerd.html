@@ -1,16 +1,7 @@
 {% extends 'base.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-{% block searchContent2 %}
-<br>
-<h2>Search memes</h2>
-<form method="get">
-    {{ myFilter2.form|crispy }}
-    <button class="btn btn-primary" type="submit">Search</button>
-</form>
-<div>
-<br>
-{% for meme in allmemes %}
+{% block mainContent %}
+
+{% for meme in nerd_list %}
 <div class="jumbotron">
     <div class="card" style="width: 40rem;">
         <div class="card-header">
@@ -42,6 +33,6 @@
         </div>
     </div>
 </div>
-{% endfor %}
-</div>
+
+    {% endfor %}
 {% endblock %}

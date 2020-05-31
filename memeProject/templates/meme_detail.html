@@ -45,18 +45,24 @@
                         <input type="submit" value="Submit" class="btn btn-outline-success" disabled>
                     {% endif %}
                 </form>
-                <br>
-                <hr>
+
+
             {% else %}
                 <!-- Do not show the like button - user is not authenticated -->
             {% endif %}
             <br>
             <div class="main-comment-section">
-                {{ comments.count }} Comments {{ comments|pluralize }}
+                {{ comments.count }} Comments
                 {% for comment in comments %}
+
                     <blockquote class="blockquote">
+
                     <p class="mb-0">{{ comment.content }} </p>
-                    <footer class="blockquote-footer">by {{ comment.user|capfirst}}</footer>
+                    <footer class="blockquote-footer">
+
+                    <img class="rounded-circle " src="{{ user.profile.image.url }}"
+                    width="30" height="30" alt="Avatar">  {{ comment.user|capfirst}}
+                    </footer>
                     </blockquote>
                 {% endfor %}
             </div>

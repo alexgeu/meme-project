@@ -5,7 +5,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+      <link rel="shortcut icon" type="image/png" href="{% static 'images/Logo_Three_square_gag.png' %}">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <!-- Main.css -->
@@ -31,40 +31,34 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
-              <!--
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">New</a>
-                  <a class="dropdown-item" href="#">Nerd</a>
-                  <a class="dropdown-item" href="#">Quotes</a>
-                  <a class="dropdown-item" href="#">Programming</a>
-                  <a class="dropdown-item" href="#">Daily struggle</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="/category/nerd">Nerd</a>
+                  <a class="dropdown-item" href="/category/quotes">Quotes</a>
+                  <a class="dropdown-item" href="/category/programming">Programming</a>
+                  <a class="dropdown-item" href="/category/dailystruggle">Daily struggle</a>
                 </div>
               </li>
-              <form class="form-inline my-2 my-lg-0" action="/search.myFilter">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-              <!--
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link" href="/search">Meme Explorer <span class="sr-only">(current)</span></a>
               </li>
-              -->
+              {% if user.is_authenticated %}
+              <li class="nav-item nav-padding">
+                  <a href="{% url 'upload_meme' %}"><button type="button" class="btn btn-outline-light">Upload Meme</button></a>
+              </li>
+              {% else %}
+                <!-- Do not show any upload button if the user is not authenticated -->
+              {% endif %}
             </ul>
             <!--right align -->
             <ul class="nav-item navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><img class="rounded-circle" src="{{ user.profile.image.url }}" width="25px" height="25px"></a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
@@ -91,6 +85,8 @@
 
             {% block mainContent %} {% endblock %}
             {% block searchContent %} {% endblock %}
+            {% block searchContent2 %} {% endblock %}
+
             {%block content2%} {% endblock %}
         </div>
         <div class="col-md-4">
@@ -98,10 +94,8 @@
             <h3>Popular Memes</h3>
             <p class='text-muted'>Here you can find the most popular memes.
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Awesome</li>
-                <li class="list-group-item list-group-item-light">GIF</li>
-                <li class="list-group-item list-group-item-light">Dirty Memes</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                <a class="list-group-item list-group-item-light" href="/mostliked">Most Liked</a>
+                <a class="list-group-item list-group-item-light" href="/mostcommented">Most Commented</a>
               </ul>
             </p>
           </div>

@@ -1,23 +1,13 @@
 {% extends 'base.html' %}
 
-{% block mainContent %}
-<form method="get">
-				{{myFilter.form}}
-
-		    <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-
-    <h2>Memes</h2>
-
-    <p>
-        <a href="{% url 'upload_meme' %}" class="btn btn-primary">Upload Meme</a>
-    </p>
+{% block searchContent %}
 
 
-<div class="jumbotron">
-            {% for meme in memes %}
+<div>
+
+            {% for meme in allmemes %}
             <p>
-    <h3><a href=/memes/{{meme.id}}>{{ meme.title }} </a>
+            <h3><a href=/memes/{{meme.id}}>{{ meme.title }} </a>
                 </h3>
 
                 <p>
@@ -25,7 +15,7 @@
                         <img src="{{ meme.image.url }}" alt="{{ meme.title }}" style="width:480px;">
                     {% endif %}
                 </p>
-                <form action="{% url 'like_meme'%}" method="POST" class=" ui form">
+                <form action="{% url 'memes:like-meme'%}" method="POST" class=" ui form">
                       {% csrf_token %}
                           <input type="hidden" name="meme_id" value="{{meme.id}}">
                           {% if user not in meme.liked.all %}
@@ -41,46 +31,4 @@
             {% endfor %}
 
 </div>
-
 {% endblock %}
-
-<h1>{{ 'LATEST MEMES' }}</h1
-
-
-<!--
-
- <h1>{{ 'LATEST MEMES' }}</h1
-
-
-
-{%block content2%}
-
-<div class="row row-cols-1 row-cols-md-5">
-    {% for obj in allProducts %}
-    <div class="col mb-4">
-        <div class="card">
-          <img src="/static/meme_pic.jpeg" class="card-image-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><a href=/products/{{obj.id}}>{{obj.title }} </a>({{ obj.price }})</h5>
-              <form action="{% url 'products:like-product'%}" method="POST" class=" ui form">
-              {% csrf_token %}
-                  <input type="hidden" name="product_id" value="{{obj.id}}">
-                  {% if user not in obj.liked.all %}
-                        <button class="ui button positive" type="submit">Like</button>
-                  {% else %}
-                        <button class="ui button negative" type="submit">Unlike</button>
-                  {% endif %}
-              </form>
-              <strong>{{ obj.liked.all.count }} likes</strong>
-            <p class="card-text">{{obj.summary }}</p>
-          </div>
-        </div>
-
-
-
-    {% endfor%}
-</div>
-
-{% endblock %}
-
--->

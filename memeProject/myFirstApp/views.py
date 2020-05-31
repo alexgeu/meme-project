@@ -4,11 +4,13 @@ from django.views.generic import ListView, TemplateView, RedirectView
 from django.core.files.storage import FileSystemStorage
 from .forms import *
 from .filters import OrderFilter
-from django.db.models import Q
+from .models import Meme
+from django.db.models import Q, Count
 from django.http import HttpResponse, HttpResponseRedirect, Http404, request
 from django.utils import timezone
 from django.contrib.auth.models import User
-
+import sys
+from subprocess import run, PIPE
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -16,7 +18,7 @@ from django.contrib.auth import logout
 #from django.contrib.auth import login, authenticate, logout
 #from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView
-
+from register import models
 from django.core.paginator import Paginator
 
 def home(request):
@@ -51,16 +53,18 @@ def search(request, *args, **kwargs):
 	return render(request, 'meme_list2.html', context)
 '''
 
+
 def get_context_data(request, *args, **kwargs):
 	allmemes = Meme.objects.all()
-	myFilter = OrderFilter(request.GET, queryset=allmemes)
-	allmemes = myFilter.qs
+	myFilter2 = OrderFilter(request.GET, queryset=allmemes)
+	allmemes = myFilter2.qs
 	context = {
 		'allmemes': allmemes,
 		'title': 'My Meme list',
-		'myFilter': myFilter,
+		'myFilter2': myFilter2,
 	}
-	
+	redirect('search')
+
 	return render(request, 'meme_list2.html', context)
 
 #I think this is also unecessary?
@@ -98,27 +102,42 @@ def like_meme(request):
 		like.save()
 	return redirect('memes:meme-list')
 
+def count_likes(request):
+	context ={
+		'likecount_list': Meme.objects.annotate(the_count=Count('liked')).order_by('-the_count')[:10]
+	}
+	return render(request, 'count_likes.html', context)
+
+def count_comments(request):
+	context = {
+		'commentcount_list': Meme.objects.annotate(the_count=Count('comment')).order_by('-the_count')[:10]
+	}
+	return render(request, 'count_comments.html', context)
+
 #this should be renamed to memeDetail
 def productDetail(request, my_id, *args, **kwargs):
 	oneProduct = get_object_or_404(Meme, id=my_id)
 	comments = Comment.objects.filter(meme_id=my_id).order_by('-id')
-	print(my_id)
 	comment_form = CommentForm(request.POST or None)
+	
 	if request.method == 'POST':
 		if comment_form.is_valid():
 			content = request.POST.get('content')
 			comment = Comment.objects.create(meme=oneProduct, user=request.user, content=content)
 			comment.save()
-
 			return HttpResponseRedirect(oneProduct.get_absolute_url())
+
 		else:
 			comment_form = CommentForm()
+
+
 	context = {
 	'meme' : oneProduct,
 	'title' : 'Meme Detail View',
 	'comments' : comments,
 	'comment_form' : comment_form,
 	}
+	
 
 	return render(request,'meme_detail.html', context)
 
@@ -142,6 +161,34 @@ def meme_list(request):
 		# 'memes': memes,
 		'page_obj': page_obj,
 	})
+
+def cat_nerd(request):
+	queryset = Meme.objects.filter(category = 'Nerd')
+	context={
+		'nerd_list':queryset
+	}
+	return render(request, 'category_nerd.html', context)
+
+def cat_dailystruggle(request):
+	queryset = Meme.objects.filter(category = 'Daily struggle')
+	context={
+		'dailystruggle_list': queryset
+	}
+	return render(request, 'category_dailystruggle.html', context)
+
+def cat_programming(request):
+	queryset = Meme.objects.filter(category = 'Programming')
+	context={
+		'programming_list': queryset
+	}
+	return render(request, 'category_programming.html', context)
+
+def cat_quotes(request):
+	queryset = Meme.objects.filter(category = 'Quotes')
+	context={
+		'quotes_list': queryset
+	}
+	return render(request, 'category_quotes.html', context)
 
 '''def productList(httprequest, *args, **kwargs):
 	allProducts = Products.objects.all()
@@ -187,3 +234,4 @@ def productDetail(request, my_id, *args, **kwargs):
 	'comment_form' : comment_form,
 	}
 '''
+
