@@ -49,7 +49,6 @@ INSTALLED_APPS = [
 
     #myApps
     'myFirstApp',
-    'myViewSample',
 ]
 
 MIDDLEWARE = [
