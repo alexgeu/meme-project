@@ -27,7 +27,6 @@ Following features are included:
 * Bootstrap styling
 
 The web app comes with pre-uploaded memes in order to see all features in action at first sight.
-The uploaded memes are taken from: < fill in the source >
 
 ## Installation guide
 
@@ -97,4 +96,4 @@ meme-project (This folder is where our environment, our readme and our requireme
 
 -> memeProject (This folder is where our manage.py file is located)
 
---> memeProject (This is where all comes together)
+--> memeProject (This is where our apps are located)
