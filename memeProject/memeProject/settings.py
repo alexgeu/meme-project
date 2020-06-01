@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'bootstrapform',
 
     #myApps
-    'myFirstApp',
+    'memeCoreApp',
 ]
 
 MIDDLEWARE = [

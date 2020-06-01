@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('value', models.CharField(choices=[('Like', 'Like'), ('Unlike', 'Unlike')], default='Like', max_length=10)),
-                ('meme', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='myFirstApp.Meme')),
+                ('meme', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='memeCoreApp.Meme')),
                 ('user', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
                 ('content', models.TextField(max_length=240)),
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
                 ('liked', models.ManyToManyField(blank=True, default=None, related_name='commented', to=settings.AUTH_USER_MODEL)),
-                ('meme', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='myFirstApp.Meme')),
+                ('meme', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='memeCoreApp.Meme')),
                 ('user', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

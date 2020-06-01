@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('myFirstApp', '0004_auto_20200524_0930'),
+        ('memeCoreApp', '0004_auto_20200524_0930'),
     ]
 
     operations = [

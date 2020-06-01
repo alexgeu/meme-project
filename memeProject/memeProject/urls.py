@@ -19,14 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from register import views as register_views
-from django.views.generic import TemplateView
-from myFirstApp.views import *
+from memeCoreApp.views import *
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', get_context_data, name='search'),
-    path('', include('myFirstApp.urls', namespace='memes')),
+    path('', include('memeCoreApp.urls', namespace='memes')),
     path('memes/upload/', upload_meme, name='upload_meme'),
     path('memes/<int:my_id>', memeDetail, name='meme-detail'),
     path('memes/', meme_list, name='meme_list'),
