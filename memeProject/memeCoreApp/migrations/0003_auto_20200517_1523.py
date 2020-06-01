@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('myFirstApp', '0002_meme_category'),
+        ('memeCoreApp', '0002_meme_category'),
     ]
 
     operations = [
