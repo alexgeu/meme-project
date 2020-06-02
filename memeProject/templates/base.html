@@ -28,9 +28,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Categories
@@ -57,8 +54,7 @@
             <ul class="nav-item navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><img class="rounded-circle" src="{{ user.profile.image.url }}" width="25px" height="25px"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><img class="rounded-circle" src="{{ user.profile.image.url }}" width="25px" height="25px">Profile</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>

@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 # Create your models here
 
 CATEGORY_CHOICES=[
-	('New', 'New'),
 	('Nerd', 'Nerd'),
 	('Quotes', 'Quotes'),
 	('Programming', 'Programming'),
